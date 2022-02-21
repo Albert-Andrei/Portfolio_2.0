@@ -19,6 +19,7 @@
       "@components/*": ["./packages/components/*"],
       "@lib/*": ["./packages/lib/*"],
       "@theme/*": ["./packages/theme/*"],
+      "@data/*": ["./packages/data/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "packages/components/Navigation/NavBar/sidebar/MenuItem.tsx"],

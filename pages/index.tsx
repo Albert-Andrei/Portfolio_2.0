@@ -1,9 +1,9 @@
 import type { NextPage } from 'next';
 import styled from 'styled-components';
-import Icon from '../packages/components/Icon';
 import Typography from '@components/Typography';
 import { useDarkMode } from '../packages/lib/dark-mode';
 import theme from '../packages/theme';
+import Hero from '@components/Hero';
 
 const Landing: NextPage = () => {
   // Hooks
@@ -11,6 +11,7 @@ const Landing: NextPage = () => {
 
   return (
     <Main>
+      <Hero />
       <Typography
         color={darkMode ? theme.colors.white : theme.colors.black}
         align="left"
@@ -18,15 +19,8 @@ const Landing: NextPage = () => {
         size={50}
       >
         Hi there 👋
-        <br /> I'm Albert, a simple
+        <br /> I&rsquo;m Albert, a simple
         <br /> software engineer 👨🏻‍💻
-      </Typography>
-      <Typography
-        color={darkMode ? theme.colors.white : theme.colors.black}
-        align="left"
-        size={50}
-      >
-        not bold iopt
       </Typography>
     </Main>
   );
@@ -38,7 +32,7 @@ const Main = styled.div`
   width: 100vw;
   height: 100vh;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   background-color: ${({ theme }) => theme.default.background};
   color: ${({ theme }) => theme.default.fontColor};
