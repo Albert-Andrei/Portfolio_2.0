@@ -16,7 +16,9 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["./packages/components/*"]
+      "@components/*": ["./packages/components/*"],
+      "@lib/*": ["./packages/lib/*"],
+      "@theme/*": ["./packages/theme/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "packages/components/Navigation/NavBar/sidebar/MenuItem.tsx"],

@@ -72,7 +72,7 @@ const LottieComp: React.FC<LottieProps> = ({
 
 export default LottieComp;
 
-export const Wrapper = styled.div<{ width: number; height: number }>`
+const Wrapper = styled.div<{ width: number; height: number }>`
   display: flex;
   justify-content: center;
   align-items: center;
