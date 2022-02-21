@@ -12,16 +12,18 @@ const Landing: NextPage = () => {
   return (
     <Main>
       <Hero />
-      <Typography
-        color={darkMode ? theme.colors.white : theme.colors.black}
-        align="left"
-        font="bold"
-        size={50}
-      >
-        Hi there 👋
-        <br /> I&rsquo;m Albert, a simple
-        <br /> software engineer 👨🏻‍💻
-      </Typography>
+      <TextContTest>
+        <Typography
+          color={darkMode ? theme.colors.white : theme.colors.black}
+          align="left"
+          font="bold"
+          size={50}
+        >
+          Hi there 👋
+          <br /> I&rsquo;m Albert, a simple
+          <br /> software engineer 👨🏻‍💻
+        </Typography>
+      </TextContTest>
     </Main>
   );
 };
@@ -36,4 +38,10 @@ const Main = styled.div`
   align-items: center;
   background-color: ${({ theme }) => theme.default.background};
   color: ${({ theme }) => theme.default.fontColor};
+`;
+
+const TextContTest = styled.div`
+  position: absolute;
+  right: 0;
+  max-width: 300px;
 `;
