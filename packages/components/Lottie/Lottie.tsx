@@ -11,6 +11,7 @@ interface LottieProps {
 
 import notFoundLottie from '../../../public/assets/lotties/404.json';
 import internalErrorLottie from '../../../public/assets/lotties/500.json';
+import playLottie from '../../../public/assets/lotties/play.json';
 
 const LottieComp: React.FC<LottieProps> = ({
   id,
@@ -42,6 +43,15 @@ const LottieComp: React.FC<LottieProps> = ({
       },
       width: 500,
       height: 300,
+    },
+    play: {
+      content: {
+        loop: true,
+        autoplay: true,
+        animationData: playLottie,
+      },
+      width: 400,
+      height: 400,
     },
   };
 

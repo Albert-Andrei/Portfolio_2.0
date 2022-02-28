@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Logo } from './Icons/Logo';
 import { Moon } from './Icons/Moon';
 import { Sun } from './Icons/Sun';
+import { CircleChros } from './Icons/CircleChros';
 
 interface IconProps {
   id: string;
@@ -32,6 +33,11 @@ const Icon: React.FC<IconProps> = ({
       content: <Sun />,
       width: 40,
       height: 40,
+    },
+    circleChros: {
+      content: <CircleChros />,
+      width: 100,
+      height: 100,
     },
   };
 

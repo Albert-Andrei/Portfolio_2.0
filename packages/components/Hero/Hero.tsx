@@ -1,100 +1,102 @@
-import React, { useRef, useState } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { MeshWobbleMaterial, OrbitControls } from '@react-three/drei';
-// import { useDarkMode } from '@lib/dark-mode';
-import { useDarkMode } from '../../lib/dark-mode';
-
-const SpinningBox = ({ position, args, color, speed }: any) => {
-  const mesh = useRef(0);
-  //@ts-ignore
-  useFrame(() => (mesh.current.rotation.x = mesh.current.rotation.y += 0.01));
-
-  // const [expand, setExpand] = useState(false);
-
-  // const props = useSpring({
-  //   scale: expand ? [1.4, 1.4, 1.4] : [1, 1, 1]
-  // });
-
-  return (
-    <mesh
-      // onClick={() => setExpand(!expand)}
-      // scale={props.scale}
-      castShadow
-      position={position}
-      ref={mesh}
-    >
-      <boxBufferGeometry attach="geometry" args={args} />
-      <MeshWobbleMaterial
-        attach="material"
-        color={color}
-        speed={speed}
-        factor={0.6}
-      />
-    </mesh>
-  );
-};
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
+import { useDarkMode } from '@lib/dark-mode';
+import TypeSriptCube from './Cubes/TypeSript/TypeSriptCube';
+import JavaScriptCube from './Cubes/JavaScript/JsCube';
+import Text from './Text/Text';
+import SpinningBox from './SpinningBox';
+import Stars from './Stars';
+import styled from 'styled-components';
+import Lottie from '@components/Lottie';
+import { useState } from 'react';
+import Icon from '@components/Icon';
 
 const Hero: React.FC = () => {
   // Hooks
   const { darkMode } = useDarkMode();
+  const [play, setPlay] = useState(false);
 
   return (
-    <Canvas shadows camera={{ position: [-5, 2, 10], fov: 80 }}>
-      <ambientLight intensity={0.7} />
-      <directionalLight
-        castShadow
-        position={[0, 10, 0]}
-        intensity={1.5}
-        shadowMapHeight={1024}
-        shadowMapWidth={1024}
-        shadowCameraFar={50}
-        shadowCameraLeft={-10}
-        shadowCameraRight={10}
-        shadowCameraTop={10}
-        shadowCameraBottom={-10}
-      />
-
-      <pointLight position={[-10, 0, -20]} intensity={0.5} />
-      <pointLight position={[0, -10, 0]} intensity={1.5} />
-
-      <group>
-        <mesh
-          receiveShadow
-          rotation={[-Math.PI / 2, 0, 0]}
-          position={[0, -3, 0]}
-        >
-          <planeBufferGeometry attach="geometry" args={[100, 100]} />
-          {darkMode ? (
-            <meshStandardMaterial attach="material" color="black" />
-          ) : (
-            <shadowMaterial attach="material" opacity={0.2} />
-          )}
-        </mesh>
-
-        {/* Box should be a separat component */}
-        <SpinningBox
-          position={[0, 1, 0]}
-          args={[4, 3, 1]}
-          color="lightblue"
-          speed={2}
+    <>
+      <Canvas shadows flat camera={{ position: [-5, 2, 10], fov: 80 }}>
+        <ambientLight intensity={0.7} />
+        <directionalLight
+          castShadow
+          position={[0, 20, 0]}
+          intensity={1}
+          shadowMapHeight={1024}
+          shadowMapWidth={1024}
+          shadowCameraFar={50}
+          shadowCameraLeft={-10}
+          shadowCameraRight={10}
+          shadowCameraTop={10}
+          shadowCameraBottom={-10}
         />
-        <SpinningBox
-          position={[-5, 0, -5]}
-          args={[2, 3, 2]}
-          color="yellow"
-          speed={3}
-        />
-        <SpinningBox
-          position={[9, 0, -2]}
-          args={[2, 2, 2]}
-          color="red"
-          speed={5}
-        />
-      </group>
 
-      <OrbitControls />
-    </Canvas>
+        <pointLight position={[-10, 10, -20]} intensity={0.4} />
+        <pointLight position={[0, -10, -10]} intensity={0.2} />
+
+        <group>
+          <mesh
+            receiveShadow
+            rotation={[-Math.PI / 2, 0, 0]}
+            position={[0, -20, 0]}
+          >
+            {darkMode ? (
+              <></>
+            ) : (
+              <>
+                <planeBufferGeometry attach="geometry" args={[150, 150]} />
+                <shadowMaterial attach="material" opacity={0.2} />
+              </>
+            )}
+          </mesh>
+
+          {/* Rendering the Stars here */}
+          {darkMode && <Stars pointCount={6000} />}
+
+          {/* Text */}
+          {/* <Text /> */}
+
+          {/* Typsecript cubeb */}
+          <SpinningBox position={[-15, -15, -30]}>
+            <TypeSriptCube />
+          </SpinningBox>
+
+          {/* Javascrip cubeb */}
+          <SpinningBox front speed={10} position={[30, 5, -15]}>
+            <JavaScriptCube />
+          </SpinningBox>
+        </group>
+
+        {/* Mouse & Scroll control of the scene */}
+        {play && <OrbitControls />}
+      </Canvas>
+
+      <LottieContaier onClick={() => setPlay(!play)}>
+        {play ? (
+          <CloseContaier>
+            <Icon id="circleChros" height={50} width={50} />
+          </CloseContaier>
+        ) : (
+          <Lottie id="play" height={100} width={100} />
+        )}
+      </LottieContaier>
+    </>
   );
 };
 
 export default Hero;
+
+const LottieContaier = styled.div`
+  position: absolute;
+  bottom: 10px;
+`;
+
+const CloseContaier = styled.div`
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
