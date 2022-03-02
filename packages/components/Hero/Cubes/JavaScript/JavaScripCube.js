@@ -81,7 +81,7 @@ export default function Model({ ...props }) {
         rotation={[-Math.PI / 2, 0, Math.PI / 2]}
         scale={[0.06, 0.01, 0.06]}
       />
-      <mesh geometry={nodes.Box.geometry} material={materials.Eternity} rotation={[-Math.PI / 2, 0, 0]} scale={0.05} />
+      <mesh castShadow geometry={nodes.Box.geometry} material={materials.Eternity} rotation={[-Math.PI / 2, 0, 0]} scale={0.05} />
       <mesh
         geometry={nodes['3D_Back_-_J'].geometry}
         material={nodes['3D_Back_-_J'].material}

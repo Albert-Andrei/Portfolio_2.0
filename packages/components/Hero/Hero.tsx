@@ -2,23 +2,33 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { useDarkMode } from '@lib/dark-mode';
 import TypeSriptCube from './Cubes/TypeSript/TypeSriptCube';
-import JavaScriptCube from './Cubes/JavaScript/JsCube';
+import JavaScriptCube from './Cubes/JavaScript/JavaScripCube';
+import HtmlCube from './Cubes/Html/Html';
 import Text from './Text/Text';
 import SpinningBox from './SpinningBox';
 import Stars from './Stars';
-import styled from 'styled-components';
 import Lottie from '@components/Lottie';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Icon from '@components/Icon';
+import Camera from './Camera/Camera';
+import { CloseContaier, PlayContaier } from './Style';
 
 const Hero: React.FC = () => {
   // Hooks
   const { darkMode } = useDarkMode();
   const [play, setPlay] = useState(false);
+  const [showSwipe, setShowSwipe] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowSwipe(false);
+    }, 5000);
+  }, [showSwipe]);
 
   return (
     <>
-      <Canvas shadows flat camera={{ position: [-5, 2, 10], fov: 80 }}>
+      <Canvas shadows flat>
+        <Camera />
         <ambientLight intensity={0.7} />
         <directionalLight
           castShadow
@@ -37,7 +47,7 @@ const Hero: React.FC = () => {
         <pointLight position={[0, -10, -10]} intensity={0.2} />
 
         <group>
-          <mesh
+          {/* <mesh
             receiveShadow
             rotation={[-Math.PI / 2, 0, 0]}
             position={[0, -20, 0]}
@@ -50,22 +60,29 @@ const Hero: React.FC = () => {
                 <shadowMaterial attach="material" opacity={0.2} />
               </>
             )}
-          </mesh>
+          </mesh> */}
 
           {/* Rendering the Stars here */}
-          {darkMode && <Stars pointCount={6000} />}
+          <Stars pointCount={darkMode ? 6000 : 0} />
 
           {/* Text */}
-          {/* <Text /> */}
+          <mesh position={[0, 0, -4.5]}>
+            <Text />
+          </mesh>
 
           {/* Typsecript cubeb */}
-          <SpinningBox position={[-15, -15, -30]}>
+          <SpinningBox position={[-30, -15, -25]}>
             <TypeSriptCube />
           </SpinningBox>
 
           {/* Javascrip cubeb */}
-          <SpinningBox front speed={10} position={[30, 5, -15]}>
+          <SpinningBox front speed={10} position={[40, 10, -30]}>
             <JavaScriptCube />
+          </SpinningBox>
+
+          {/* Html cubeb */}
+          <SpinningBox front speed={15} position={[25, -15, -25]}>
+            <HtmlCube />
           </SpinningBox>
         </group>
 
@@ -73,30 +90,28 @@ const Hero: React.FC = () => {
         {play && <OrbitControls />}
       </Canvas>
 
-      <LottieContaier onClick={() => setPlay(!play)}>
+      <PlayContaier
+        onClick={() => {
+          setPlay(!play);
+          setShowSwipe(true);
+        }}
+      >
         {play ? (
-          <CloseContaier>
-            <Icon id="circleChros" height={50} width={50} />
-          </CloseContaier>
+          <>
+            <CloseContaier>
+              {showSwipe ? (
+                <Lottie id="swipe" />
+              ) : (
+                <Icon id="circleChros" height={50} width={50} />
+              )}
+            </CloseContaier>
+          </>
         ) : (
           <Lottie id="play" height={100} width={100} />
         )}
-      </LottieContaier>
+      </PlayContaier>
     </>
   );
 };
 
 export default Hero;
-
-const LottieContaier = styled.div`
-  position: absolute;
-  bottom: 10px;
-`;
-
-const CloseContaier = styled.div`
-  width: 100px;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
