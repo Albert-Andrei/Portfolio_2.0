@@ -1,6 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
-import { GTM_ID } from '../packages/lib/gtag';
+import { GTM_ID } from '@lib/gtag';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: any) {
@@ -38,6 +38,14 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <meta charSet="UTF-8" />
+          <meta
+            name="description"
+            content="This website is Albert's portfolio"
+          />
+          <meta name="keywords" content="HTML, CSS, JavaScript" />
+          <meta name="author" content="Albert-Andrei Moldovanu" />
+
           <meta name="format-detection" content="telephone=no" />
           <meta
             name="description"

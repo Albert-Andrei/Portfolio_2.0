@@ -18,7 +18,7 @@ export const TextContainer = styled.p<{
   }>`
     font-family: 'Roboto', sans-serif;
     font-size: ${({ size, theme }) => (size ? size : theme.fontSizes.normal)}px;
-    font-weight: ${({ font }) => (font === 'bold' ? '700' : '400')};
+    font-weight: ${({ font }) => (font === 'bold' ? '700' : font === 'normal' ? '400' : '300')};
     color: ${({ color, theme }) => (color ? color : theme.colors.black)};
     display: ${({ displayBlock }) => (displayBlock ? 'block' : 'flex')};
     text-align: ${({ align }) => (align ? align : 'left')};
@@ -33,5 +33,6 @@ export const TextContainer = styled.p<{
     margin-bottom: ${({ spacingAfter }) => spacingAfter || 0}px;
     ${({ underline, color }) =>
       underline ? `border-bottom: 2px ${color} solid` : ''}
+      white-space: pre-line;
   `;
   

@@ -4,8 +4,8 @@ import global from '../global'
 const darkTheme: DefaultTheme = {
   ...global,
   default: {
-      background: '#000',
-      fontColor: '',
+      background: '#171717',
+      fontColor: '#fff',
   }
 };
 

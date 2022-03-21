@@ -6,12 +6,12 @@ import Head from 'next/head';
 import Script from 'next/script';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import * as gtag from '../packages/lib/gtag';
-import NavBar from '../packages/components/Navigation/NavBar';
-import { lightTheme, darkTheme } from '../packages/theme';
+import * as gtag from '@lib/gtag';
+import NavBar from '@components/Navigation/NavBar';
+import { lightTheme, darkTheme } from '../theme';
 import '../styles/sidebar.css';
-import { DarkMode } from '../packages/lib/dark-mode';
-import Switch from '../packages/components/Switch';
+import { DarkMode } from '@lib/dark-mode';
+import Switch from '@components/Switch';
 
 function MyApp({ Component, pageProps }: AppProps) {
   // Hooks
@@ -61,13 +61,6 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Head>
             <link rel="shortcut icon" href="/favicon.png" />
             <title>Albert-Andrei Moldovanu</title>
-            <meta charSet="UTF-8" />
-            <meta
-              name="description"
-              content="This website is Albert's portfolio"
-            />
-            <meta name="keywords" content="HTML, CSS, JavaScript" />
-            <meta name="author" content="Albert-Andrei Moldovanu" />
           </Head>
 
           <NavBar />

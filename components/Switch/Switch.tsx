@@ -1,5 +1,5 @@
 import Icon from '../Icon/Icon';
-import * as Styles from './Styles';
+import * as Styles from './Switch.styles';
 
 export interface SwitchProps {
   checked?: boolean;

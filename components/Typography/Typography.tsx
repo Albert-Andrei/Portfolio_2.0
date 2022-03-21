@@ -1,11 +1,11 @@
-import { TextContainer } from './Styles';
+import { TextContainer } from './Typography.styles';
 
 interface TypographyProps {
   color?: string;
   align?: 'center' | 'left' | 'right';
   children?: React.ReactNode;
   onClick?: () => void;
-  font?: 'regular' | 'bold';
+  font?: 'regular' | 'normal' | 'bold';
   size?: number;
   lineHeight?: number;
   displayBlock?: boolean;

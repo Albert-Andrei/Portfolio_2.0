@@ -1,17 +1,17 @@
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { useDarkMode } from '@lib/dark-mode';
-import TypeSriptCube from './Cubes/TypeSript/TypeSriptCube';
-import JavaScriptCube from './Cubes/JavaScript/JavaScripCube';
-import HtmlCube from './Cubes/Html/Html';
+import TypeSriptCube from '../Cubes/TypeSript/TypeSriptCube';
+import JavaScriptCube from '../Cubes/JavaScript/JavaScripCube';
+import HtmlCube from '../Cubes/Html/Html';
 import Text from './Text/Text';
-import SpinningBox from './SpinningBox';
+import SpinningBox from '../SpinningBox';
 import Stars from './Stars';
 import Lottie from '@components/Lottie';
 import { useEffect, useState } from 'react';
 import Icon from '@components/Icon';
 import Camera from './Camera/Camera';
-import { CloseContaier, PlayContaier } from './Style';
+import { CloseContaier, PlayContaier } from '../Hero.style';
 
 const Hero: React.FC = () => {
   // Hooks

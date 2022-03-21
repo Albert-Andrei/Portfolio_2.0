@@ -1,7 +1,7 @@
 import React from 'react';
 import { NextPage } from 'next';
 import styled from 'styled-components';
-import Lottie from '../packages/components/Lottie';
+import Lottie from '@components/Lottie';
 
 interface ErrorProps {
   statusCode: number;

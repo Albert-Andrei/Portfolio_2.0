@@ -24,15 +24,15 @@ const SpinningBox: React.FC<SpinningBoxProps> = ({
     () => (mesh.current.rotation.y = mesh.current.rotation.y += speed / 1000),
   );
 
-  useFrame(
-    () =>
-      // @ts-ignore
-      (mesh.current.rotation.y = front
-        ? // @ts-ignore
-          (mesh.current.rotation.z = mesh.current.rotation.x += 0.001)
-        : // @ts-ignore
-          (mesh.current.rotation.x += -(speed / 1000))),
-  );
+  // useFrame(
+  //   () =>
+  //     // @ts-ignore
+  //     (mesh.current.rotation.y = front
+  //       ? // @ts-ignore
+  //         (mesh.current.rotation.z = mesh.current.rotation.x += speed * 0.001)
+  //       : // @ts-ignore
+  //         (mesh.current.rotation.z = mesh.current.rotation.x -= 0.002)),
+  // );
 
   return (
     <mesh position={position} ref={mesh}>

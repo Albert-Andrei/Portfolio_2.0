@@ -2094,6 +2094,11 @@ react-reconciler@^0.26.2:
     object-assign "^4.1.1"
     scheduler "^0.20.2"
 
+react-scroll-motion@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/react-scroll-motion/-/react-scroll-motion-0.2.1.tgz#f903c51d450e684dd80c1bf25d6e62ef73da7511"
+  integrity sha512-l2/t8/IWI8CWaXuxq3bwNu09ABaM7+0Wm/2/S/zHp02sEpTeffqylQzWUZZykOgBqC6/uZsqVdAvDkcsPKZ6XQ==
+
 react-three-fiber@0.0.0-deprecated:
   version "0.0.0-deprecated"
   resolved "https://registry.yarnpkg.com/react-three-fiber/-/react-three-fiber-0.0.0-deprecated.tgz#c737242487d824cf9520307308b7e4c4071a278f"

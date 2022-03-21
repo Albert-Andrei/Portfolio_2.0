@@ -11,4 +11,3 @@ export const DarkMode = createContext<DarkModeProps>({
 })
 
 export const useDarkMode = () => useContext(DarkMode)
-

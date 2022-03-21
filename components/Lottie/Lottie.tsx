@@ -9,10 +9,10 @@ interface LottieProps {
   onAnimationConplete?: () => void;
 }
 
-import notFoundLottie from '../../../public/assets/lotties/404.json';
-import internalErrorLottie from '../../../public/assets/lotties/500.json';
-import playLottie from '../../../public/assets/lotties/play.json';
-import swipeLottie from '../../../public/assets/lotties/swipe.json';
+import notFoundLottie from '../../public/assets/lotties/404.json';
+import internalErrorLottie from '../../public/assets/lotties/500.json';
+import playLottie from '../../public/assets/lotties/play.json';
+import swipeLottie from '../../public/assets/lotties/swipe.json';
 
 const LottieComp: React.FC<LottieProps> = ({
   id,

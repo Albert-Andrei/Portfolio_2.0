@@ -5,8 +5,8 @@ import global from '../global'
 const lightTheme: DefaultTheme = {
   ...global,
   default: {
-      background: '#fff',
-      fontColor: '',
+      background: '#f7f7f7',
+      fontColor: '#000',
   },
 };
 

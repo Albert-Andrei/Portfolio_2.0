@@ -10,7 +10,7 @@ export default function Model({ ...props }) {
   const { nodes, materials } = useGLTF('/assets/models/JsCube.glb')
   
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group ref={group} {...props} dispose={null} scale={[0.7, 0.7, 0.7]}>
       <mesh
         geometry={nodes['3D_Fromt_-_J'].geometry}
         material={nodes['3D_Fromt_-_J'].material}
