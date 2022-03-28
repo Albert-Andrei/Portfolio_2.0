@@ -49,13 +49,13 @@ class MyDocument extends Document {
           <meta name="format-detection" content="telephone=no" />
           <meta
             name="description"
-            content="Find tonsvis af dygtige mennesker til dine opgaver i eller udenfor hjemmet. Alt fra handyhjælp til hundeluftning - bare shout."
+            content="Albert-Andrei Moldovanu | Software Developer | Denmark This website is Albert's portfolio, here I share my projects, my skills and my contact information and a lot of usefull stuff."
           />
           <meta name="author" content="AAMoldovanu®" />
           <meta name="copyright" content="© 2021 Albert-Anderi Moldovanu" />
           <meta
             property="og:title"
-            content="Få fixet dine to do's eller tjen penge på dine talenter"
+            content="Albert-Andrei Moldovanu | Software Developer this its my portfolio website :D"
           />
           <meta property="og:type" content="website" />
           <meta

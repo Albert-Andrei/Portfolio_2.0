@@ -807,6 +807,11 @@ balanced-match@^1.0.0:
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.2.tgz#e83e3a7e3f300b34cb9d87f615fa0cbf357690ee"
   integrity sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==
 
+bezier-easing@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/bezier-easing/-/bezier-easing-2.1.0.tgz#c04dfe8b926d6ecaca1813d69ff179b7c2025d86"
+  integrity sha1-wE3+i5JtbsrKGBPWn/F5t8ICXYY=
+
 bidi-js@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/bidi-js/-/bidi-js-1.0.2.tgz#1a497a762c2ddea377429d2649c9ce0f8a91527f"
@@ -1956,6 +1961,13 @@ p-try@^1.0.0:
   resolved "https://registry.yarnpkg.com/p-try/-/p-try-1.0.0.tgz#cbc79cdbaf8fd4228e13f621f2b1a237c1b207b3"
   integrity sha1-y8ec26+P1CKOE/Yh8rGiN8GyB7M=
 
+parallax-controller@^1.3.5:
+  version "1.3.5"
+  resolved "https://registry.yarnpkg.com/parallax-controller/-/parallax-controller-1.3.5.tgz#a2f2b84c59dd2ec91f6c128ad7b21ea8b444cc2e"
+  integrity sha512-AyfQT+uXWzTAVz8uAQZuCYlqvq5pKNxg34Gvk1TbA/qvvyA9SkWtzWXlgDZ4SElDWT8OBfidE0DAYqslaX2++A==
+  dependencies:
+    bezier-easing "^2.1.0"
+
 parent-module@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/parent-module/-/parent-module-1.0.1.tgz#691d2709e78c79fae3a156622452d00762caaaa2"
@@ -2098,6 +2110,13 @@ react-scroll-motion@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/react-scroll-motion/-/react-scroll-motion-0.2.1.tgz#f903c51d450e684dd80c1bf25d6e62ef73da7511"
   integrity sha512-l2/t8/IWI8CWaXuxq3bwNu09ABaM7+0Wm/2/S/zHp02sEpTeffqylQzWUZZykOgBqC6/uZsqVdAvDkcsPKZ6XQ==
+
+react-scroll-parallax@^3.0.5:
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/react-scroll-parallax/-/react-scroll-parallax-3.0.5.tgz#1d2c3fa39f596faeb40ea6136e004f39d9726647"
+  integrity sha512-2StEKOUEl7INk2B1AtjtsPxcG0aCLu0K9DRg74ecngZF4772qmTNGzG/u/KGfGKo0WXTlJ9eAaQifk6uF6RiyQ==
+  dependencies:
+    parallax-controller "^1.3.5"
 
 react-three-fiber@0.0.0-deprecated:
   version "0.0.0-deprecated"

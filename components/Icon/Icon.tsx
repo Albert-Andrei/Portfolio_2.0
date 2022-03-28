@@ -4,6 +4,7 @@ import { Logo } from './Icons/Logo';
 import { Moon } from './Icons/Moon';
 import { Sun } from './Icons/Sun';
 import { CircleChros } from './Icons/CircleChros';
+import { ArrowRight } from './Icons/ArrowRight';
 
 interface IconProps {
   id: string;
@@ -38,6 +39,11 @@ const Icon: React.FC<IconProps> = ({
       content: <CircleChros />,
       width: 100,
       height: 100,
+    },
+    arrowRight: {
+      content: <ArrowRight color={color} />,
+      width: 64,
+      height: 54,
     },
   };
 

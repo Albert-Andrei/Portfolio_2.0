@@ -12,6 +12,8 @@ interface TypographyProps {
   spacingBefore?: number;
   spacingAfter?: number;
   underline?: boolean;
+  uppercase?: boolean;
+  letterSpacing?: number;
 }
 
 const Typography: React.FC<TypographyProps> = ({
@@ -25,6 +27,8 @@ const Typography: React.FC<TypographyProps> = ({
   spacingAfter,
   displayBlock,
   underline,
+  uppercase,
+  letterSpacing,
   onClick,
 }: TypographyProps): JSX.Element => (
   <TextContainer
@@ -37,6 +41,8 @@ const Typography: React.FC<TypographyProps> = ({
     color={color}
     lineHeight={lineHeight}
     underline={underline}
+    uppercase={uppercase}
+    letterSpacing={letterSpacing}
   >
     {children}
   </TextContainer>

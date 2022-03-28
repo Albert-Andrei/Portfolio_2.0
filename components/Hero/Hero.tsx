@@ -2,7 +2,7 @@ import Typography from '@components/Typography';
 import { useDarkMode } from '@lib/dark-mode';
 import theme from '@theme/global';
 import { useState } from 'react';
-import * as Style from './Hero.style';
+import * as Style from './Hero.styles';
 import { Scene } from './Scene';
 
 const Hero: React.FC = () => {
@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
           color={darkMode ? theme.colors.grey1 : theme.colors.grey9}
           size={theme.fontSizes.subHeader}
         >
-          Albert-Andrei Moldovanu | Front-end Developer
+          Albert-Andrei Moldovanu | Software Developer
         </Typography>
 
         <Typography

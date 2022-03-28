@@ -12,6 +12,7 @@ import { lightTheme, darkTheme } from '../theme';
 import '../styles/sidebar.css';
 import { DarkMode } from '@lib/dark-mode';
 import Switch from '@components/Switch';
+import { ParallaxProvider } from 'react-scroll-parallax';
 
 function MyApp({ Component, pageProps }: AppProps) {
   // Hooks
@@ -63,10 +64,12 @@ function MyApp({ Component, pageProps }: AppProps) {
             <title>Albert-Andrei Moldovanu</title>
           </Head>
 
-          <NavBar />
-          <Component {...pageProps} />
+          <ParallaxProvider>
+            <NavBar />
+            <Component {...pageProps} />
 
-          <Switch checked={darkMode} onChange={setDarkMode} />
+            <Switch checked={darkMode} onChange={setDarkMode} />
+          </ParallaxProvider>
         </ThemeProvider>
       </DarkMode.Provider>
     </>

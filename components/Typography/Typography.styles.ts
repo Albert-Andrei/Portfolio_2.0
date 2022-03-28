@@ -15,6 +15,8 @@ export const TextContainer = styled.p<{
     spacingBefore?: number;
     spacingAfter?: number;
     spacingBeforeMobile?: number;
+    uppercase?: boolean;
+    letterSpacing?: number;
   }>`
     font-family: 'Roboto', sans-serif;
     font-size: ${({ size, theme }) => (size ? size : theme.fontSizes.normal)}px;
@@ -34,5 +36,7 @@ export const TextContainer = styled.p<{
     ${({ underline, color }) =>
       underline ? `border-bottom: 2px ${color} solid` : ''}
       white-space: pre-line;
+    ${({ letterSpacing }) => (letterSpacing ? `letter-spacing: ${letterSpacing}px;` : '')}
+    ${({ uppercase }) => (uppercase ? ` text-transform: uppercase;` : '')}
   `;
   

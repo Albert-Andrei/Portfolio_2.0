@@ -3,8 +3,11 @@ import styled, { keyframes } from 'styled-components';
 import Typography from '@components/Typography';
 import { useDarkMode } from '@lib/dark-mode';
 import theme from '@theme/global';
-import Hero from '@components/Hero';
 import { useEffect, useState } from 'react';
+import Hero from '@components/Hero';
+import Skills from '@components/Forms/Skills';
+import Projects from '@components/Forms/Projects';
+import WorkTogether from '@components/Forms/WorkTogether/WorkTogether';
 
 const Landing: NextPage = () => {
   // Hooks
@@ -35,6 +38,8 @@ const Landing: NextPage = () => {
   return (
     <Main>
       <Hero />
+      <Skills />
+      <Projects />
 
       <TextContier style={{ opacity: show ? 1 : 0 }} className="fade-in">
         <AboutText>
@@ -46,6 +51,8 @@ const Landing: NextPage = () => {
           </Typography>
         </AboutText>
       </TextContier>
+
+      <WorkTogether />
     </Main>
   );
 };
