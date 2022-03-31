@@ -2,11 +2,12 @@ import styled from 'styled-components';
 
 export const MainContaier = styled.div`
   width: 100%;
-  height: 70vh;
+  height: calc(100vh - 100px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
+  padding-bottom: 120px;
 `;
 
 export const LinkContent = styled.a<{darkMode?: boolean}>`
