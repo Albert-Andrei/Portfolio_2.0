@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { useDarkMode } from '@lib/dark-mode';
 
 export const MainContaier = styled.div`
   width: 100%;

@@ -5,11 +5,14 @@ import { Moon } from './Icons/Moon';
 import { Sun } from './Icons/Sun';
 import { CircleChros } from './Icons/CircleChros';
 import { ArrowRight } from './Icons/ArrowRight';
+import { Facebook } from './Icons/Facebook';
+import { Instagram } from './Icons/Instagram';
 
 interface IconProps {
   id: string;
   width?: number;
   height?: number;
+  hover?: boolean;
   color?: string | null;
 }
 
@@ -17,6 +20,7 @@ const Icon: React.FC<IconProps> = ({
   id,
   width,
   height,
+  hover,
   color,
 }: IconProps): JSX.Element | null => {
   const data: any = {
@@ -44,6 +48,16 @@ const Icon: React.FC<IconProps> = ({
       content: <ArrowRight color={color} />,
       width: 64,
       height: 54,
+    },
+    facebook: {
+      content: <Facebook />,
+      width: 189,
+      height: 189,
+    },
+    instagram: {
+      content: <Instagram />,
+      width: 189,
+      height: 189,
     },
   };
 

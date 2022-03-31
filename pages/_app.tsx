@@ -13,6 +13,7 @@ import '../styles/sidebar.css';
 import { DarkMode } from '@lib/dark-mode';
 import Switch from '@components/Switch';
 import { ParallaxProvider } from 'react-scroll-parallax';
+import Footer from '@components/Navigation/Footer';
 
 function MyApp({ Component, pageProps }: AppProps) {
   // Hooks
@@ -60,14 +61,17 @@ function MyApp({ Component, pageProps }: AppProps) {
           />
 
           <Head>
-            <link rel="shortcut icon" href="/favicon.png" />
+            <link rel="icon" href="favicon.svg" />
+            <link rel="shortcut icon" href="favicon.png" />
+            <link rel="mask-icon" href="favicon.svg" />
+            <link rel="apple-touch-icon" href="favicon.png" />
             <title>Albert-Andrei Moldovanu</title>
           </Head>
 
           <ParallaxProvider>
             <NavBar />
             <Component {...pageProps} />
-
+            <Footer />
             <Switch checked={darkMode} onChange={setDarkMode} />
           </ParallaxProvider>
         </ThemeProvider>

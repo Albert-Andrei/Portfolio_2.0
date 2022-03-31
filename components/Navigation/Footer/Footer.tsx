@@ -1,8 +1,10 @@
+import Icon from '@components/Icon';
 import Link from 'next/dist/client/link';
+import { useState } from 'react';
 import SocialMediaData from '../../../data/SocialMediaData';
 import theme from '../../../theme';
 import Typography from '../../Typography';
-import * as Styles from './Styles';
+import * as Styles from './Footer.styles';
 
 const Footer: React.FC = () => {
   return (
@@ -11,11 +13,8 @@ const Footer: React.FC = () => {
         {SocialMediaData.map((value, index) => (
           <Link href={value.link} key={index}>
             <a target="_blank" rel="noreferrer">
-              <Styles.SocialItem
-                hoverColor={value.color}
-                isSpotify={value.title === 'spotify' ? true : false}
-              >
-                {value.image}
+              <Styles.SocialItem>
+                <Icon id={value.title} width={27} height={27} />
               </Styles.SocialItem>
             </a>
           </Link>
@@ -23,7 +22,7 @@ const Footer: React.FC = () => {
       </Styles.SocialMediaLinks>
       <Styles.MadeWithLove>
         <Typography align="center" size={10} color={theme.colors.grey4}>
-          {'Made with ❤️ by the me '}
+          {'Made with ❤️ by me :D'}
         </Typography>
         <Typography align="center" size={10} color={theme.colors.grey4}>
           {` © ${new Date().getFullYear()} All rights reseved`}
@@ -31,9 +30,11 @@ const Footer: React.FC = () => {
       </Styles.MadeWithLove>
       <Styles.Address>
         <div style={{ maxWidth: 130 }}>
-          <Typography align="right" size={10} color={theme.colors.grey4}>
-            {/* Contact info here */}
-          </Typography>
+          <a href="mailto:moldovanualiberta@gmail.com">
+            <Typography align="right" size={10} color={theme.colors.grey4}>
+              moldovanualiberta@gmail.com
+            </Typography>
+          </a>
         </div>
       </Styles.Address>
     </Styles.FooterContaier>
