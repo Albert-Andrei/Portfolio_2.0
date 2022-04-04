@@ -1,16 +1,38 @@
 import Icon from '@components/Icon';
 import Typography from '@components/Typography';
 import { useDarkMode } from '@lib/dark-mode';
-import theme from '@theme/global';
+import theme from '@theme/theme';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import * as Styles from './WorkTogether.styles';
 
 const WorkTogether: React.FC = () => {
   // Hooks
   const { darkMode } = useDarkMode();
 
+  // States
+  const [show, setShow] = useState(false);
+  const [offsetY, setOffsetY] = useState(0);
+
+  const handleScroll = () => setOffsetY(window.pageYOffset - screen.height);
+
+  useEffect(() => {
+    const faders = document.querySelectorAll('.fade-in');
+
+    window.addEventListener('scroll', () => {
+      faders.forEach((entry) => {
+        var top = entry.getBoundingClientRect().top;
+
+        if (top < window.innerHeight) {
+          setShow(true);
+        }
+      });
+    });
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   return (
-    <Styles.MainContaier>
+    <Styles.MainContaier style={{ opacity: show ? 1 : 0 }} className="fade-in">
       <Typography
         color={darkMode ? theme.colors.grey3 : theme.colors.grey5}
         uppercase

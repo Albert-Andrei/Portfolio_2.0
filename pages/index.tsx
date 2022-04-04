@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import styled, { keyframes } from 'styled-components';
 import Typography from '@components/Typography';
 import { useDarkMode } from '@lib/dark-mode';
-import theme from '@theme/global';
+import theme from '@theme/theme';
 import { useEffect, useState } from 'react';
 import Hero from '@components/Hero';
 import Skills from '@components/Forms/Skills';
@@ -40,18 +40,6 @@ const Landing: NextPage = () => {
       <Hero />
       <Skills />
       <Projects />
-
-      <TextContier style={{ opacity: show ? 1 : 0 }} className="fade-in">
-        <AboutText>
-          <Typography
-            size={22}
-            color={darkMode ? theme.colors.white : theme.colors.grey8}
-          >
-            I{'\xb4'}m Albert
-          </Typography>
-        </AboutText>
-      </TextContier>
-
       <WorkTogether />
     </Main>
   );

@@ -1,5 +1,5 @@
 import { DefaultTheme } from 'styled-components';
-import global from '../global'
+import global from '../theme'
 
 const darkTheme: DefaultTheme = {
   ...global,

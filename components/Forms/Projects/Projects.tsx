@@ -1,33 +1,26 @@
-import Typography from '@components/Typography';
 import { useDarkMode } from '@lib/dark-mode';
-import theme from '@theme/global';
-import { useState } from 'react';
-import { useParallax } from 'react-scroll-parallax';
 import * as Styles from './Projects.styles';
+import ProjectsData from '../../../data/ProjectsData';
+import ParalaxCard from '@components/Cards/ParalaxCard';
+import ParalaxHoverCard from '@components/Cards/ParalxHoverCard';
 
 const Projects: React.FC = () => {
   // Hooks
   const { darkMode } = useDarkMode();
-  const projects = [1, 2, 3, 4, 5];
-
-  // States
-  const [hovered, setHovered] = useState(false);
-
-  const parallax = useParallax<HTMLDivElement>({
-    easing: [1, -0.75, 0.5, 1.34],
-    translateY: [0, 100],
-  });
-
-  const parallax2 = useParallax<HTMLDivElement>({
-    translateY: [0, 10, 'easeInQuad'],
-  });
 
   return (
     <Styles.ProjectsContaier>
-      {projects.map((project) => (
-        <Styles.Project key={project} reverse={project % 2 === 1}>
-          <Styles.MainImage ref={parallax.ref} />
-          <Styles.SecondaryImage ref={parallax2.ref} />
+      {ProjectsData.map((project, index) => (
+        <Styles.Project key={index} reverse={index % 2 === 0}>
+          <ParalaxCard extendedStyle={{ width: '70%' }}></ParalaxCard>
+          <ParalaxHoverCard
+            hover
+            primary={project.primary}
+            top={project.top}
+            translate={[200, 0]}
+            easing={[0, 0.4, 0.5, 1]}
+            extendedStyle={{ background: 'pink', width: 400, height: 300 }}
+          ></ParalaxHoverCard>
         </Styles.Project>
       ))}
     </Styles.ProjectsContaier>

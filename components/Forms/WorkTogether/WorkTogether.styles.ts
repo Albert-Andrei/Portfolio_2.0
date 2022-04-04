@@ -8,13 +8,16 @@ export const MainContaier = styled.div`
   align-items: center;
   justify-content: flex-end;
   padding-bottom: 120px;
+
+  opacity: 0;
+  transition: opacity 1s ease-in;
 `;
 
-export const LinkContent = styled.a<{darkMode?: boolean}>`
+export const LinkContent = styled.a<{ darkMode?: boolean }>`
   position: relative;
   display: flex;
   align-items: center;
-  margin-bottom: 65px;
+  margin-bottom: 80px;
 
   &:hover {
     cursor: pointer;
@@ -27,7 +30,8 @@ export const LinkContent = styled.a<{darkMode?: boolean}>`
     bottom: -10px;
     width: 100%;
     height: 5px;
-    background: ${({ theme, darkMode }) => darkMode ? theme.colors.grey2 : theme.colors.grey9}; 
+    background: ${({ theme, darkMode }) =>
+      darkMode ? theme.colors.grey2 : theme.colors.grey9};
 
     transform: scaleX(0);
     transform-origin: right;
@@ -43,4 +47,3 @@ export const LinkContent = styled.a<{darkMode?: boolean}>`
 export const IconWrapper = styled.div`
   margin-left: 30px;
 `;
-

@@ -35,10 +35,16 @@ export const SocialMediaLinks = styled.div`
 `;
 
 export const SocialItem = styled.div<{}>`
-  margin: 0 10px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  margin-right: 10px;
+  & svg > * {
+  transition: all linear 1s;
+  }
+
+  :hover {
+    & svg > * {
+      transition: all linear 1s;
+    }
+  }
 `;
 
 export const MadeWithLove = styled.div`

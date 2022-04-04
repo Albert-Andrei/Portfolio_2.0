@@ -1,5 +1,5 @@
 // import original module declarations
-import { ITheme } from '../theme/global';
+import { ITheme } from '../theme/theme';
 import 'styled-components';
 
 // and extend them!

@@ -29,13 +29,11 @@ const Footer: React.FC = () => {
         </Typography>
       </Styles.MadeWithLove>
       <Styles.Address>
-        <div style={{ maxWidth: 130 }}>
-          <a href="mailto:moldovanualiberta@gmail.com">
-            <Typography align="right" size={10} color={theme.colors.grey4}>
-              moldovanualiberta@gmail.com
-            </Typography>
-          </a>
-        </div>
+        <a href="mailto:moldovanualiberta@gmail.com">
+          <Typography align="right" size={10} color={theme.colors.grey4}>
+            Feel free to contact me any time! {'\n'} moldovanualiberta@gmail.com
+          </Typography>
+        </a>
       </Styles.Address>
     </Styles.FooterContaier>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import Icon from '@components/Icon';
-import { ITheme } from '@theme/global';
+import { ITheme } from '@theme/theme';
 import * as Style from './Button.styles';
 import Typography from '@components/Typography';
 

@@ -33,10 +33,10 @@ export const SceneContaier = styled.div`
 
 export const TsScene = styled.div`
   position: absolute;
-  bottom: 0px;
-  right: 0px;
-  width: 700px;
-  height: 600px;
+  bottom: 50px;
+  right: -50px;
+  width: 650px;
+  height: 550px;
 `;
 
 export const Helpers = styled.div`

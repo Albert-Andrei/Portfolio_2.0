@@ -1,6 +1,6 @@
 import Typography from '@components/Typography';
 import { useDarkMode } from '@lib/dark-mode';
-import theme from '@theme/global';
+import theme from '@theme/theme';
 import { useState } from 'react';
 import * as Style from './Hero.styles';
 import { Scene } from './Scene';

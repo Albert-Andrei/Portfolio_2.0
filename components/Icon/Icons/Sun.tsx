@@ -7,7 +7,7 @@ export const Sun: React.FC = () => {
       <g filter="url(#sun_b)">
         <path
           d="M27.8598 20.5c0 4.1421-3.3265 7.5-7.4299 7.5C16.3265 28 13 24.6421 13 20.5s3.3265-7.5 7.4299-7.5c4.1034 0 7.4299 3.3579 7.4299 7.5Z"
-          fill="url(#c)"
+          fill="url(#sun_c)"
         />
       </g>
       <defs>
@@ -50,7 +50,7 @@ export const Sun: React.FC = () => {
           <feBlend in2="shape" result="effect1_innerShadow_64_119" />
         </filter>
         <linearGradient
-          id="c"
+          id="sun_c"
           x1="19.3013"
           y1="24.5823"
           x2="25.5016"

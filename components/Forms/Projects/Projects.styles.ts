@@ -1,30 +1,21 @@
 import styled from 'styled-components';
 
 export const ProjectsContaier = styled.div`
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
 
-export const Project = styled.div<{reverse?: boolean}>`
-height: 50vh;
+export const Project = styled.div<{ reverse?: boolean }>`
+  position: relative;
+  height: 70vh;
   width: 100%;
   display: flex;
-  flex-direction: ${({reverse}) => reverse ? 'row' : 'row-reverse'};
-  justify-content: center;
+  flex-direction: ${({ reverse }) => (reverse ? 'row' : 'row-reverse')};
+  justify-content: flex-start;
   align-items: center;
-`;
 
-export const MainImage = styled.div`
-  height: 300px;
-  width: 500px;
-  background: lightblue;
-`;
-
-export const SecondaryImage = styled.div`
-  height: 150px;
-  width: 150px;
-  background: pink;
+  margin-bottom: 110px;
 `;
