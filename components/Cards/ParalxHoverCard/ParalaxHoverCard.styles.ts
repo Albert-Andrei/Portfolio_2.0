@@ -21,4 +21,5 @@ export const ParalaxContaier = styled.div<{
       : `right: 0;
       bottom: 0;
       background: pink;`}
+  border-radius: 10px;
 `;

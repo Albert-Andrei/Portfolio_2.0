@@ -39,31 +39,57 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <meta charSet="UTF-8" />
-          <meta
-            name="description"
-            content="This website is Albert's portfolio"
-          />
           <meta name="keywords" content="HTML, CSS, JavaScript" />
           <meta name="author" content="Albert-Andrei Moldovanu" />
 
           <meta name="format-detection" content="telephone=no" />
-          <meta
-            name="description"
-            content="Albert-Andrei Moldovanu | Software Developer | Denmark This website is Albert's portfolio, here I share my projects, my skills and my contact information and a lot of usefull stuff."
-          />
+
           <meta name="author" content="AAMoldovanu®" />
           <meta name="copyright" content="© 2021 Albert-Anderi Moldovanu" />
+
+          <title>Albert-Andrei Moldovanu</title>
+          <meta
+            name="description"
+            content="Albert-Andrei Moldovanu | Software Developer 
+              This website is my portfolio, here I share my projects, skills, contact information and a lot of usefull stuff. Feel free to take a look :D"
+          />
+
           <meta
             property="og:title"
             content="Albert-Andrei Moldovanu | Software Developer this its my portfolio website :D"
           />
           <meta property="og:type" content="website" />
+          <meta property="og:site_name" content="AAMoldovanu®" />
+
+          {/* <!-- Facebook Meta Tags --> */}
+          <meta property="og:url" content="https://aamoldovanu.com/" />
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content="Albert-Andrei Moldovanu" />
           <meta
             property="og:description"
-            content="Find tonsvis af dygtige mennesker til dine opgaver i eller udenfor hjemmet. Alt fra handyhjælp til hundeluftning - bare shout."
+            content="Albert-Andrei Moldovanu | Software Developer 
+              This website is my portfolio, here I share my projects, skills, contact information and a lot of usefull stuff. Feel free to take a look :D"
           />
-          <meta property="og:url" content="https://aamoldovanu.com/" />
-          <meta property="og:site_name" content="AAMoldovanu®" />
+          <meta
+            property="og:image"
+            content="https://aamoldovanu.com/preview.jpg"
+          />
+
+          {/* <!-- Twitter Meta Tags --> */}
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta property="twitter:domain" content="aamoldovanu.com" />
+          <meta property="twitter:url" content="https://aamoldovanu.com/" />
+          <meta name="twitter:title" content="Albert-Andrei Moldovanu" />
+          <meta
+            name="twitter:description"
+            content="Albert-Andrei Moldovanu | Software Developer 
+              This website is my portfolio, here I share my projects, skills, contact information and a lot of usefull stuff. Feel free to take a look :D"
+          />
+          <meta
+            name="twitter:image"
+            content="https://aamoldovanu.com/preview.jpg"
+          />
+
           {styles}
 
           <link rel="preconnect" href="https://fonts.googleapis.com" />

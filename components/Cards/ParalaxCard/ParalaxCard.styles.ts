@@ -8,4 +8,5 @@ export const ParalaxContaier = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 5;
+  border-radius: 10px;
 `;

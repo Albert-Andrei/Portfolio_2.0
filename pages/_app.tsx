@@ -65,7 +65,6 @@ function MyApp({ Component, pageProps }: AppProps) {
             <link rel="shortcut icon" href="favicon.png" />
             <link rel="mask-icon" href="favicon.svg" />
             <link rel="apple-touch-icon" href="favicon.png" />
-            <title>Albert-Andrei Moldovanu</title>
           </Head>
 
           <ParallaxProvider>

@@ -19,3 +19,13 @@ export const Project = styled.div<{ reverse?: boolean }>`
 
   margin-bottom: 110px;
 `;
+
+export const ContentContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  span {
+    border-radius: 10px;
+  }
+`;

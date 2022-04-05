@@ -12,7 +12,11 @@ const Projects: React.FC = () => {
     <Styles.ProjectsContaier>
       {ProjectsData.map((project, index) => (
         <Styles.Project key={index} reverse={index % 2 === 0}>
-          <ParalaxCard extendedStyle={{ width: '70%' }}></ParalaxCard>
+          <ParalaxCard extendedStyle={{ width: '70%' }}>
+            <Styles.ContentContainer>
+              {project.primaryImage}
+            </Styles.ContentContainer>
+          </ParalaxCard>
           <ParalaxHoverCard
             hover
             primary={project.primary}
@@ -20,7 +24,11 @@ const Projects: React.FC = () => {
             translate={[200, 0]}
             easing={[0, 0.4, 0.5, 1]}
             extendedStyle={{ background: 'pink', width: 400, height: 300 }}
-          ></ParalaxHoverCard>
+          >
+            <Styles.ContentContainer>
+              {project.secondaryImage}
+            </Styles.ContentContainer>
+          </ParalaxHoverCard>
         </Styles.Project>
       ))}
     </Styles.ProjectsContaier>
