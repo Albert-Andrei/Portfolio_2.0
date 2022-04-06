@@ -1,13 +1,12 @@
 import type { NextPage } from 'next';
-import styled, { keyframes } from 'styled-components';
-import Typography from '@components/Typography';
+import styled from 'styled-components';
 import { useDarkMode } from '@lib/dark-mode';
-import theme from '@theme/theme';
 import { useEffect, useState } from 'react';
 import Hero from '@components/Hero';
 import Skills from '@components/Forms/Skills';
-import Projects from '@components/Forms/Projects';
 import WorkTogether from '@components/Forms/WorkTogether/WorkTogether';
+import Project from '@components/Forms/Project';
+import ProjectsData from '@data/ProjectsData';
 
 const Landing: NextPage = () => {
   // Hooks
@@ -39,7 +38,12 @@ const Landing: NextPage = () => {
     <Main>
       <Hero />
       <Skills />
-      <Projects />
+
+      <ProjectsContaier>
+        {ProjectsData.map((project, index) => (
+          <Project key={index} index={index} project={project} />
+        ))}
+      </ProjectsContaier>
       <WorkTogether />
     </Main>
   );
@@ -70,4 +74,12 @@ const TextContier = styled.div`
 
 const AboutText = styled.div`
   max-width: 400px;
+`;
+
+const ProjectsContaier = styled.div`
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;

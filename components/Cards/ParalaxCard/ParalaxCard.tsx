@@ -4,7 +4,7 @@ import { useParallax } from 'react-scroll-parallax';
 interface ParalaxCardProps {
   extendedStyle?: React.CSSProperties;
   children?: React.ReactNode;
-  setShowContent?: (showContent: boolean) => void;
+  setShowContent: (progress: number) => void;
 }
 
 const ParalaxCard: React.FC<ParalaxCardProps> = ({
@@ -16,7 +16,7 @@ const ParalaxCard: React.FC<ParalaxCardProps> = ({
     easing: [0, 0.1, 0.3, 1],
     translateY: [80, 0],
     onProgressChange: (progress) => {
-      progress > 0.3 && setShowContent;
+      setShowContent(progress);
     },
   });
 

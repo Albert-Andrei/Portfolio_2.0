@@ -1,13 +1,5 @@
 import styled from 'styled-components';
 
-export const ProjectsContaier = styled.div`
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-
 export const Project = styled.div<{ reverse?: boolean }>`
   position: relative;
   height: 70vh;
@@ -28,4 +20,20 @@ export const ContentContainer = styled.div`
   span {
     border-radius: 10px;
   }
+`;
+
+export const DecriptionLine = styled.div<{ show?: boolean }>`
+  width: ${({ show }) => (show ? '100%' : '0%')};
+  height: 1px;
+  position: absolute;
+  top: 150px;
+  left: 0;
+  transition: all 0.5s;
+`;
+
+export const InfoContaier = styled.div`
+  width: 30%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
 `;

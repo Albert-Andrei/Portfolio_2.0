@@ -16,10 +16,11 @@ export const ParalaxContaier = styled.div<{
   ${({ top }) =>
     top
       ? `left: 0;
-      top: 100px;
+      top: 50px;
       background: pink;`
       : `right: 0;
       bottom: 0;
       background: pink;`}
   border-radius: 10px;
+  box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.15);
 `;

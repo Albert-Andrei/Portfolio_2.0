@@ -7,6 +7,8 @@ import { CircleChros } from './Icons/CircleChros';
 import { ArrowRight } from './Icons/ArrowRight';
 import { Facebook } from './Icons/Facebook';
 import { Instagram } from './Icons/Instagram';
+import { LinkedIn } from './Icons/LinkedIn';
+import { GitHub } from './Icons/GitHub';
 
 interface IconProps {
   id: string;
@@ -51,13 +53,23 @@ const Icon: React.FC<IconProps> = ({
     },
     facebook: {
       content: <Facebook />,
-      width: 189,
-      height: 189,
+      width: 190,
+      height: 191,
     },
     instagram: {
       content: <Instagram />,
-      width: 189,
-      height: 189,
+      width: 190,
+      height: 191,
+    },
+    linkedin: {
+      content: <LinkedIn />,
+      width: 190,
+      height: 191,
+    },
+    github: {
+      content: <GitHub />,
+      width: 190,
+      height: 191,
     },
   };
 
