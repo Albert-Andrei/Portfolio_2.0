@@ -23,7 +23,11 @@ const Projects: React.FC = () => {
             top={project.top}
             translate={[200, 0]}
             easing={[0, 0.4, 0.5, 1]}
-            extendedStyle={{ background: 'pink', width: 400, height: 300 }}
+            extendedStyle={{
+              background: 'pink',
+              width: project.width ? project.width : 400,
+              height: project.height ? project.height : 300,
+            }}
           >
             <Styles.ContentContainer>
               {project.secondaryImage}

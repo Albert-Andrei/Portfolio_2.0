@@ -4,11 +4,15 @@ import Shouter from '../public/assets/images/Shouter.jpg';
 import ShouterSmall from '../public/assets/images/ShouterSmall.jpg';
 import MyMovieDB from '../public/assets/images/MyMovieDB.jpg';
 import MyMovieDBSmall from '../public/assets/images/MyMovieDBSmall.jpg';
+import Excelsis from '../public/assets/images/Excelsis.jpg';
+import ExcelsisSmall from '../public/assets/images/ExcelsisSmall.jpg';
+import BePrepared from '../public/assets/images/BePrepared.jpg';
+import BePreparedSmall from '../public/assets/images/BePreparedSmall.jpg';
 
 const ProjectsData = [
   {
-    title: 'shouter',
-    link: 'https://www.facebook.com/moldovanu.andrei.165/',
+    title: 'Shouter',
+    link: 'https://shouter.app',
     top: false,
     primary: false,
     primaryImage: (
@@ -31,14 +35,41 @@ const ProjectsData = [
     ),
   },
   {
-    title: 'mymoviedb',
+    title: 'Excelsis',
     link: 'https://www.instagram.com/m.albert_andrei/',
     top: true,
     primary: true,
+    width: 380,
+    primaryImage: (
+      <Image
+        src={Excelsis}
+        alt="Excelsis"
+        layout="fill"
+        placeholder="blur"
+        objectFit="cover"
+      />
+    ),
+    secondaryImage: (
+      <Image
+        src={ExcelsisSmall}
+        alt="Excelsis small"
+        layout="fill"
+        placeholder="blur"
+        objectFit="cover"
+      />
+    ),
+  },
+  {
+    title: 'MyMovieDB',
+    link: 'https://github.com/Albert-Andrei/MyAndroidApp',
+    top: false,
+    primary: true,
+    width: 370,
+    height: 350,
     primaryImage: (
       <Image
         src={MyMovieDB}
-        alt="avatar"
+        alt="MyMovieDB"
         layout="fill"
         placeholder="blur"
         objectFit="cover"
@@ -47,22 +78,7 @@ const ProjectsData = [
     secondaryImage: (
       <Image
         src={MyMovieDBSmall}
-        alt="shouter small"
-        layout="fill"
-        placeholder="blur"
-        objectFit="cover"
-      />
-    ),
-  },
-  {
-    title: 'linkedin',
-    link: 'https://www.linkedin.com/in/albert-andrei-moldovanu-0a8199209/',
-    top: false,
-    primary: true,
-    primaryImage: (
-      <Image
-        src={Shouter}
-        alt="avatar"
+        alt="MyMovieDB small"
         layout="fill"
         placeholder="blur"
         objectFit="cover"
@@ -76,8 +92,17 @@ const ProjectsData = [
     primary: true,
     primaryImage: (
       <Image
-        src={Shouter}
-        alt="avatar"
+        src={BePrepared}
+        alt="BePrepared"
+        layout="fill"
+        placeholder="blur"
+        objectFit="cover"
+      />
+    ),
+    secondaryImage: (
+      <Image
+        src={BePreparedSmall}
+        alt="BePrepared Small"
         layout="fill"
         placeholder="blur"
         objectFit="cover"
