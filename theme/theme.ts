@@ -11,7 +11,7 @@ export interface ITheme {
   default: {
     background: string;
     fontColor: string;
-  },
+  };
   colors: {
     purpleLow: string;
     purpleHigh: string;
@@ -74,7 +74,7 @@ const theme: DefaultTheme = {
   default: {
     background: '',
     fontColor: '',
-  }, 
+  },
   colors: {
     purpleLow: '#FED4ED',
     purpleHigh: '#FEE8F7',
@@ -125,7 +125,7 @@ const theme: DefaultTheme = {
   },
   spacings: {
     small: 10,
-    medium: 16,
+    medium: 15,
     large: 20,
     xlarge: 30,
     xxlarge: 40,

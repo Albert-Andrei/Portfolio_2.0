@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@babel/preset-typescript": "^7.16.7",
+    "@radix-ui/react-hover-card": "^0.1.5",
     "@radix-ui/react-switch": "^0.1.4",
     "@react-three/drei": "^8.10.6",
     "@react-three/fiber": "^7.0.26",

@@ -1,7 +1,7 @@
-import * as Styles from './ParalaxHoverCard.styles';
+import * as Styles from './ParallaxHoverCard.styles';
 import { useParallax } from 'react-scroll-parallax';
 
-interface ParalaxCardProps {
+interface ParallaxCardProps {
   extendedStyle?: React.CSSProperties;
   children?: React.ReactNode;
   translate?: [number, number];
@@ -11,7 +11,7 @@ interface ParalaxCardProps {
   top?: boolean;
 }
 
-const ParalaxHoverCard: React.FC<ParalaxCardProps> = ({
+const ParallaxHoverCard: React.FC<ParallaxCardProps> = ({
   extendedStyle,
   children,
   translate,
@@ -19,14 +19,14 @@ const ParalaxHoverCard: React.FC<ParalaxCardProps> = ({
   hover,
   primary,
   top,
-}: ParalaxCardProps) => {
+}) => {
   const parallax = useParallax<HTMLDivElement>({
     easing: easing ? easing : [0, 0.1, 0.3, 1],
     translateY: translate ? translate : [80, 0],
   });
 
   return (
-    <Styles.ParalaxContaier
+    <Styles.ParallaxContainer
       ref={parallax.ref}
       style={{ ...extendedStyle }}
       hover={hover}
@@ -34,8 +34,8 @@ const ParalaxHoverCard: React.FC<ParalaxCardProps> = ({
       top={top}
     >
       {children}
-    </Styles.ParalaxContaier>
+    </Styles.ParallaxContainer>
   );
 };
 
-export default ParalaxHoverCard;
+export default ParallaxHoverCard;

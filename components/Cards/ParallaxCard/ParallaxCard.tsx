@@ -1,17 +1,17 @@
-import * as Styles from './ParalaxCard.styles';
+import * as Styles from './ParallaxCard.styles';
 import { useParallax } from 'react-scroll-parallax';
 
-interface ParalaxCardProps {
+interface ParallaxCardProps {
   extendedStyle?: React.CSSProperties;
   children?: React.ReactNode;
   setShowContent: (progress: number) => void;
 }
 
-const ParalaxCard: React.FC<ParalaxCardProps> = ({
+const ParallaxCard: React.FC<ParallaxCardProps> = ({
   extendedStyle,
   children,
   setShowContent,
-}: ParalaxCardProps) => {
+}) => {
   const parallax = useParallax<HTMLDivElement>({
     easing: [0, 0.1, 0.3, 1],
     translateY: [80, 0],
@@ -21,10 +21,10 @@ const ParalaxCard: React.FC<ParalaxCardProps> = ({
   });
 
   return (
-    <Styles.ParalaxContaier ref={parallax.ref} style={{ ...extendedStyle }}>
+    <Styles.ParallaxContainer ref={parallax.ref} style={{ ...extendedStyle }}>
       {children}
-    </Styles.ParalaxContaier>
+    </Styles.ParallaxContainer>
   );
 };
 
-export default ParalaxCard;
+export default ParallaxCard;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ParalaxContaier = styled.div<{
+export const ParallaxContainer = styled.div<{
   hover?: boolean;
   primary?: boolean;
   top?: boolean;

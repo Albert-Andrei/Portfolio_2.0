@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ParalaxContaier = styled.div`
+export const ParallaxContainer = styled.div`
   height: 100%;
   width: 100%;
   background: lightblue;

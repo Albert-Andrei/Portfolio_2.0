@@ -47,7 +47,6 @@ class MyDocument extends Document {
           <meta name="author" content="AAMoldovanu®" />
           <meta name="copyright" content="© 2021 Albert-Anderi Moldovanu" />
 
-          <title>Albert-Andrei Moldovanu</title>
           <meta
             name="description"
             content="Albert-Andrei Moldovanu | Software Developer 

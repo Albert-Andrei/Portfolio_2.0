@@ -1,9 +1,9 @@
 import { useDarkMode } from '@lib/dark-mode';
 import * as Styles from './Project.styles';
-import ParalaxCard from '@components/Cards/ParalaxCard';
-import ParalaxHoverCard from '@components/Cards/ParalxHoverCard';
 import { useState } from 'react';
 import theme from '@theme/theme';
+import ParallaxHoverCard from '@components/Cards/ParallaxHoverCard';
+import ParallaxCard from '@components/Cards/ParallaxCard';
 
 export interface ProjectsProps {
   index: number;
@@ -20,7 +20,7 @@ const Projects: React.FC<ProjectsProps> = ({
 
   return (
     <Styles.Project reverse={index % 2 === 0}>
-      <ParalaxCard
+      <ParallaxCard
         extendedStyle={{ width: '70%' }}
         setShowContent={(progress) =>
           progress > 0.8 ? setShow(true) : setShow(false)
@@ -29,7 +29,7 @@ const Projects: React.FC<ProjectsProps> = ({
         <Styles.ContentContainer>
           {project.primaryImage}
         </Styles.ContentContainer>
-      </ParalaxCard>
+      </ParallaxCard>
 
       <Styles.InfoContaier>
         <Styles.DecriptionLine
@@ -40,7 +40,7 @@ const Projects: React.FC<ProjectsProps> = ({
         />
       </Styles.InfoContaier>
 
-      <ParalaxHoverCard
+      <ParallaxHoverCard
         hover
         primary={project.primary}
         top={project.top}
@@ -55,7 +55,7 @@ const Projects: React.FC<ProjectsProps> = ({
         <Styles.ContentContainer>
           {project.secondaryImage}
         </Styles.ContentContainer>
-      </ParalaxHoverCard>
+      </ParallaxHoverCard>
     </Styles.Project>
   );
 };

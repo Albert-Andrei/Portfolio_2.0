@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { Logo } from './Icons/Logo';
 import { Moon } from './Icons/Moon';
@@ -9,6 +8,18 @@ import { Facebook } from './Icons/Facebook';
 import { Instagram } from './Icons/Instagram';
 import { LinkedIn } from './Icons/LinkedIn';
 import { GitHub } from './Icons/GitHub';
+import { React } from './Icons/React';
+import { ReactLight } from './Icons/ReactLight';
+import { Node } from './Icons/Node';
+import { NodeLight } from './Icons/NodeLight';
+import { Next } from './Icons/Next';
+import { NextLight } from './Icons/NextLight';
+import { MongoDB } from './Icons/MongoDB';
+import { MongoDBLight } from './Icons/MongoDBLight';
+import { Firebase } from './Icons/Firebase';
+import { FirebaseLight } from './Icons/FirebaseLight';
+import { AWS } from './Icons/AWS';
+import { AWSLight } from './Icons/AWSLight';
 
 interface IconProps {
   id: string;
@@ -70,6 +81,66 @@ const Icon: React.FC<IconProps> = ({
       content: <GitHub />,
       width: 190,
       height: 191,
+    },
+    react: {
+      content: <React />,
+      width: 204,
+      height: 204,
+    },
+    reactLight: {
+      content: <ReactLight />,
+      width: 216,
+      height: 216,
+    },
+    node: {
+      content: <Node />,
+      width: 204,
+      height: 204,
+    },
+    nodeLight: {
+      content: <NodeLight />,
+      width: 216,
+      height: 216,
+    },
+    next: {
+      content: <Next />,
+      width: 204,
+      height: 204,
+    },
+    nextLight: {
+      content: <NextLight />,
+      width: 216,
+      height: 216,
+    },
+    mongodb: {
+      content: <MongoDB />,
+      width: 204,
+      height: 204,
+    },
+    mongodbLight: {
+      content: <MongoDBLight />,
+      width: 216,
+      height: 216,
+    },
+    firebase: {
+      content: <Firebase />,
+      width: 204,
+      height: 204,
+    },
+    firebaseLight: {
+      content: <FirebaseLight />,
+      width: 216,
+      height: 216,
+    },
+    aws: {
+      content: <AWS />,
+      width: 204,
+      height: 204,
+    },
+    awsLight: {
+      content: <AWSLight />,
+      width: 216,
+      height: 216,
     },
   };
 
