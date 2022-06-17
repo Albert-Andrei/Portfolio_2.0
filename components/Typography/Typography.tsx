@@ -1,3 +1,5 @@
+import { useDarkMode } from '@lib/dark-mode';
+import React from 'react';
 import { TextContainer } from './Typography.styles';
 
 interface TypographyProps {
@@ -16,7 +18,7 @@ interface TypographyProps {
   letterSpacing?: number;
 }
 
-const Typography: React.FC<TypographyProps> = ({
+const Typography: React.FC<TypographyProps & React.CSSProperties> = ({
   color,
   align = 'center',
   children,
@@ -30,22 +32,29 @@ const Typography: React.FC<TypographyProps> = ({
   uppercase,
   letterSpacing,
   onClick,
-}: TypographyProps): JSX.Element => (
-  <TextContainer
-    spacingBefore={spacingBefore}
-    spacingAfter={spacingAfter}
-    displayBlock={displayBlock}
-    font={font}
-    align={align}
-    size={size}
-    color={color}
-    lineHeight={lineHeight}
-    underline={underline}
-    uppercase={uppercase}
-    letterSpacing={letterSpacing}
-  >
-    {children}
-  </TextContainer>
-);
+  ...props
+}: TypographyProps): JSX.Element => {
+  // Hooks
+  const { darkMode } = useDarkMode();
+  return (
+    <TextContainer
+      spacingBefore={spacingBefore}
+      spacingAfter={spacingAfter}
+      displayBlock={displayBlock}
+      font={font}
+      align={align}
+      size={size}
+      color={color}
+      lineHeight={lineHeight}
+      underline={underline}
+      uppercase={uppercase}
+      letterSpacing={letterSpacing}
+      darkMode={darkMode}
+      style={{ ...props }}
+    >
+      {children}
+    </TextContainer>
+  );
+};
 
 export default Typography;

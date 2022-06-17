@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 
 import { useParallax } from 'react-scroll-parallax';
@@ -6,44 +7,54 @@ import * as Styles from './SkillCard.styles';
 
 interface SkillCardProps {
   title: string;
-  description?: string;
+  description: string;
+  scrollValues: { start: number; end: number };
 }
 
-const SkillCard: React.FC<SkillCardProps> = ({ title, description }) => {
+const SkillCard: React.FC<SkillCardProps> = ({
+  title,
+  description,
+  scrollValues,
+}) => {
   // State
   const [contentProgress, setContentProgress] = useState(0);
 
-  const rightS = useParallax<HTMLDivElement>({
-    easing: 'easeOutQuad',
-    translateX: [150, 0],
-    startScroll: 1050,
-    endScroll: 1500,
-    opacity: [0, 1, 'easeInOut'],
+  const main = useParallax<HTMLDivElement>({
     onProgressChange: (progress) => {
       setContentProgress(progress);
     },
   });
 
-  const rightM = useParallax<HTMLDivElement>({
+  const rightS = useParallax<HTMLDivElement>({
     easing: 'easeOutQuad',
-    translateX: [70, 0],
-    startScroll: 1050,
-    endScroll: 1500,
+    translateX: [150, 0],
+    startScroll: scrollValues.start,
+    endScroll: scrollValues.end,
     opacity: [0, 1, 'easeInOut'],
   });
 
+  const rightM = useParallax<HTMLDivElement>({
+    easing: 'easeOutQuad',
+    translateX: [70, 0],
+    startScroll: scrollValues.start,
+    endScroll: scrollValues.end,
+    opacity: [0, 1, 'easeInOut'],
+  });
+
+  React.useEffect(() => {
+    console.log(title, ' progress: ', contentProgress, contentProgress < 0.5);
+  }, [contentProgress]);
+
   return (
-    <Styles.SkillCard>
+    <Styles.SkillCard
+      ref={main.ref}
+      style={{ opacity: contentProgress < 0.5 ? 1 : 0 }}
+    >
       <div ref={rightS.ref} style={{ marginTop: 100 }}>
         <h1>{title}</h1>
       </div>
       <div ref={rightM.ref}>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea ratione
-          velit provident mollitia, rem eligendi atque non, iusto quas facilis
-          nam reiciendis impedit? Cumque ad animi praesentium laboriosam
-          distinctio dolore.
-        </p>
+        <p>{description}</p>
       </div>
     </Styles.SkillCard>
   );

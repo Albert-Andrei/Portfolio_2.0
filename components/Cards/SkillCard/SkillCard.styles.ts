@@ -9,4 +9,5 @@ export const SkillCard = styled.div`
   justify-content: center;
   transition: all 0.5s ease-in-out;
   background-color: red;
+  padding: 0 ${({ theme }) => theme.spacings.xxlarge}px;
 `;

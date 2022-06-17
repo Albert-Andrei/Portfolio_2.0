@@ -30,12 +30,15 @@ export const FloatingContainer = styled.div<{ delay?: number }>`
   }
 `;
 
-export const Content = styled(HoverCard.Content)`
+export const Content = styled(HoverCard.Content)<{ darkMode: boolean }>`
   border-radius: 10px;
   padding: 20px;
-  height: 150px;
-  width: 200px;
-  background-color: pink;
+  max-width: 300px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  background-color: ${({ darkMode }) => (darkMode ? '#2E2E2E' : '#FBFBFB')};
   box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px,
     hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
   /* '@media (prefers-reduced-motion: no-preference)': {
@@ -52,6 +55,12 @@ export const Content = styled(HoverCard.Content)`
   }, */
 `;
 
-export const Arrow = styled(HoverCard.Arrow)`
-  fill: white;
+export const Arrow = styled(HoverCard.Arrow)<{ darkMode: boolean }>`
+  fill: ${({ darkMode }) => (darkMode ? '#2E2E2E' : '#FBFBFB')};
+`;
+
+export const ContentHeader = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: ${({ theme }) => theme.spacings.small}px;
 `;

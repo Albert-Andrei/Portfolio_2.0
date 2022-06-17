@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { motion } from 'framer-motion';
 import { MenuItem } from './MenuItem';
-import Data from '../../../../data/NavigationData';
+import Data from '@data/NavigationData';
 
 const variants = {
   open: {
