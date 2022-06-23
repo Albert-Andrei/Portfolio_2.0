@@ -6,7 +6,6 @@ interface TypographyProps {
   color?: string;
   align?: 'center' | 'left' | 'right';
   children?: React.ReactNode;
-  onClick?: () => void;
   font?: 'regular' | 'normal' | 'bold';
   size?: number;
   lineHeight?: number;
@@ -16,6 +15,7 @@ interface TypographyProps {
   underline?: boolean;
   uppercase?: boolean;
   letterSpacing?: number;
+  onClick?: () => void;
 }
 
 const Typography: React.FC<TypographyProps & React.CSSProperties> = ({

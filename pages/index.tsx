@@ -1,49 +1,57 @@
 import type { NextPage } from 'next';
 import styled from 'styled-components';
 import { useDarkMode } from '@lib/dark-mode';
-import { useEffect, useState } from 'react';
+import { useRef } from 'react';
 import Hero from '@components/Hero';
 import Skills from '@components/Forms/Skills';
 import WorkTogether from '@components/Forms/WorkTogether/WorkTogether';
 import Project from '@components/Forms/Project';
 import ProjectsData from '@data/ProjectsData';
+import Typography from '@components/Typography';
+import theme from '@theme/theme';
 
 const Landing: NextPage = () => {
   // Hooks
   const { darkMode } = useDarkMode();
+  const project = useRef<HTMLDivElement>(null);
 
-  // States
-  const [show, setShow] = useState(false);
-  const [offsetY, setOffsetY] = useState(0);
-
-  const handleScroll = () => setOffsetY(window.pageYOffset - screen.height);
-
-  useEffect(() => {
-    const faders = document.querySelectorAll('.fade-in');
-
-    window.addEventListener('scroll', () => {
-      faders.forEach((entry) => {
-        var top = entry.getBoundingClientRect().top;
-
-        if (top < window.innerHeight) {
-          setShow(true);
-        }
+  const scrollToProject = () => {
+    if (project.current) {
+      project.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
       });
-    });
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    }
+  };
 
   return (
     <Main>
-      <Hero />
+      <Hero onClick={scrollToProject} />
       <Skills />
 
-      <ProjectsContaier>
+      <ProjectsTitle ref={project} className="fade-in">
+        <Typography
+          spacingBefore={150}
+          size={theme.fontSizes.header}
+          color={darkMode ? theme.colors.grey1 : theme.colors.grey9}
+        >
+          Projects
+        </Typography>
+
+        <Typography
+          size={theme.fontSizes.header * 2}
+          spacingBefore={theme.spacings.xlarge}
+          color={darkMode ? theme.colors.grey1 : theme.colors.grey9}
+          font="bold"
+        >
+          Some of my recent works
+        </Typography>
+      </ProjectsTitle>
+      <ProjectsContainer>
         {ProjectsData.map((project, index) => (
           <Project key={index} index={index} project={project} />
         ))}
-      </ProjectsContaier>
+      </ProjectsContainer>
       <WorkTogether />
     </Main>
   );
@@ -62,21 +70,15 @@ const Main = styled.div`
   padding: 0 100px;
 `;
 
-const TextContier = styled.div`
-  width: 100vw;
-  height: 100vh;
+const ProjectsTitle = styled.div`
+  height: 60vh;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
-  opacity: 0;
-  transition: opacity 1s ease-in;
 `;
 
-const AboutText = styled.div`
-  max-width: 400px;
-`;
-
-const ProjectsContaier = styled.div`
+const ProjectsContainer = styled.div`
   width: 90%;
   display: flex;
   flex-direction: column;

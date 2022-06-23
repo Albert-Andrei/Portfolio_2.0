@@ -102,7 +102,7 @@ const Hero: React.FC = () => {
               {showSwipe ? (
                 <Lottie id="swipe" />
               ) : (
-                <Icon id="circleChros" height={50} width={50} />
+                <Icon id="circleCross" height={50} width={50} />
               )}
             </CloseContaier>
           </>

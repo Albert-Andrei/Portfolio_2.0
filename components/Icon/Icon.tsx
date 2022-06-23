@@ -1,31 +1,30 @@
 import styled from 'styled-components';
-import { Logo } from './Icons/Logo';
-import { Moon } from './Icons/Moon';
-import { Sun } from './Icons/Sun';
-import { CircleChros } from './Icons/CircleChros';
-import { ArrowRight } from './Icons/ArrowRight';
-import { Facebook } from './Icons/Facebook';
-import { Instagram } from './Icons/Instagram';
-import { LinkedIn } from './Icons/LinkedIn';
-import { GitHub } from './Icons/GitHub';
-import { React } from './Icons/React';
-import { ReactLight } from './Icons/ReactLight';
-import { Node } from './Icons/Node';
-import { NodeLight } from './Icons/NodeLight';
-import { Next } from './Icons/Next';
-import { NextLight } from './Icons/NextLight';
-import { MongoDB } from './Icons/MongoDB';
-import { MongoDBLight } from './Icons/MongoDBLight';
-import { Firebase } from './Icons/Firebase';
-import { FirebaseLight } from './Icons/FirebaseLight';
-import { AWS } from './Icons/AWS';
-import { AWSLight } from './Icons/AWSLight';
+import { ArrowRight } from './icons/ArrowRight';
+import { CircleCross } from './icons/CircleCross';
+import { Logo } from './icons/Logo';
+import { Moon } from './icons/Moon';
+import { AWS } from './icons/skills/aws/AWS';
+import { AWSLight } from './icons/skills/aws/AWSLight';
+import { Firebase } from './icons/skills/firebase/Firebase';
+import { FirebaseLight } from './icons/skills/firebase/FirebaseLight';
+import { MongoDB } from './icons/skills/mongo/MongoDB';
+import { MongoDBLight } from './icons/skills/mongo/MongoDBLight';
+import { Next } from './icons/skills/next/Next';
+import { NextLight } from './icons/skills/next/NextLight';
+import { Node } from './icons/skills/node/Node';
+import { NodeLight } from './icons/skills/node/NodeLight';
+import { React } from './icons/skills/react/React';
+import { ReactLight } from './icons/skills/react/ReactLight';
+import { Facebook } from './icons/social/Facebook';
+import { GitHub } from './icons/social/GitHub';
+import { Instagram } from './icons/social/Instagram';
+import { LinkedIn } from './icons/social/LinkedIn';
+import { Sun } from './icons/Sun';
 
 interface IconProps {
   id: string;
   width?: number;
   height?: number;
-  hover?: boolean;
   color?: string | null;
 }
 
@@ -33,7 +32,6 @@ const Icon: React.FC<IconProps> = ({
   id,
   width,
   height,
-  hover,
   color,
 }: IconProps): JSX.Element | null => {
   const data: any = {
@@ -52,8 +50,8 @@ const Icon: React.FC<IconProps> = ({
       width: 40,
       height: 40,
     },
-    circleChros: {
-      content: <CircleChros />,
+    circleCross: {
+      content: <CircleCross />,
       width: 100,
       height: 100,
     },
@@ -148,6 +146,13 @@ const Icon: React.FC<IconProps> = ({
   if (!icon) {
     return null;
   }
+
+  // For future something more efficient should be used for icon component, like
+  //   const Component = require(../../svgs/${my-svg-name}.svg);
+
+  // <React.Suspense loading={<h1>Svg Loading Placeholder</h1>}>
+  // <Component {...myProps} />
+  // </React.Suspense>
 
   return (
     <Wrapper width={width || icon.width} height={height || icon.height}>

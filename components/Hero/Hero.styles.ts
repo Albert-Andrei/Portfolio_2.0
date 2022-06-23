@@ -14,6 +14,7 @@ export const Content = styled.div`
   z-index: 5;
   width: 100%;
   height: 100%;
+  padding: 0 50px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;

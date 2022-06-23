@@ -36,7 +36,7 @@ class MyDocument extends Document {
   render() {
     const { styles } = this.props;
     return (
-      <Html>
+      <Html lang="en">
         <Head>
           <meta charSet="UTF-8" />
           <meta name="keywords" content="HTML, CSS, JavaScript" />

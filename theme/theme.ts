@@ -13,16 +13,6 @@ export interface ITheme {
     fontColor: string;
   };
   colors: {
-    purpleLow: string;
-    purpleHigh: string;
-    purpleStrong: string;
-    purpleGreyBlend: string;
-    seedLow: string;
-    seedHigh: string;
-    seedStrong: string;
-    orangeLow: string;
-    orangeHigh: string;
-    orangeStrong: string;
     white: string;
     black: string;
     dark: string;
@@ -76,16 +66,6 @@ const theme: DefaultTheme = {
     fontColor: '',
   },
   colors: {
-    purpleLow: '#FED4ED',
-    purpleHigh: '#FEE8F7',
-    purpleStrong: '#FFB2E1',
-    purpleGreyBlend: '#F9E3F2',
-    orangeLow: '#FFD2A6',
-    orangeHigh: '#FFDDBA',
-    orangeStrong: '#FDBB79',
-    seedLow: '#DFD9BD',
-    seedHigh: '#EDEADA',
-    seedStrong: '#EDE5B9',
     white: '#FFFFFF',
     black: '#000000',
     dark: '#171717',

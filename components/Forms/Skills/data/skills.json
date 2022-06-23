@@ -1,20 +1,32 @@
 [
     {
-      "title": "HTML",
+      "title": "Development",
       "description":
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea ratione velit provident mollitia, rem eligendi atque non, iusto quas facilis nam reiciendis impedit? Cumque ad animi praesentium laboriosam distinctio dolore.",
+        "I am a software developer with a passion for building beautiful, responsive websites and mobile applications. I have a background in both front-end and back-end development, and I am currently working on a full-stack software developer.",
+      "subTitle": "Languages I speak:",
+      "tools": "JavaScript, Java, C#, Typescript",
+      "devTitle": "My powers:",
+      "devTools": "Next.js, React, Node, Express, MongoDB, PostgreSQL, Material-UI, Styled-Components,",
       "scrollValues": { "start": 1200, "end": 1500 }
     },
     {
-      "title": "CSS",
+      "title": "Design",
       "description":
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea ratione velit provident mollitia, rem eligendi atque non, iusto quas facilis nam reiciendis impedit? Cumque ad animi praesentium laboriosam distinctio dolore.",
+        "I value simple content structure, clean design patterns, and thoughtful interactions. I alway try to be as carefully to details as possible. A good UX is really important to me and I try to make sure that my products are as user friendly as possible.",
+      "subTitle": "Things I enjoy designing:",
+      "tools": "UX, UI, Web, Mobile, Apps, Games",
+      "devTitle": "Design Tools:",
+      "devTools": "Figma, Photoshop, Illustrator",
       "scrollValues": { "start": 1700, "end": 2150 }
     },
     {
-      "title": "JS",
+      "title": "Tools",
       "description":
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea ratione velit provident mollitia, rem eligendi atque non, iusto quas facilis nam reiciendis impedit? Cumque ad animi praesentium laboriosam distinctio dolore.",
+        "subTitle": "Things I enjoy designing:",
+        "tools": "UX, UI, Web, Mobile, Apps, Games",
+        "devTitle": "Design Tools:",
+        "devTools": "Figma, Photoshop, Illustrator",
       "scrollValues": { "start": 2250, "end": 2700 }
     }
 ]

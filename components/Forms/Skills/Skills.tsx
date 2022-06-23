@@ -58,11 +58,7 @@ const Skills: React.FC = () => {
         <>
           {skillsData.map((skill, index) => (
             <Styles.SkillContent key={index}>
-              <SkillCard
-                title={skill.title}
-                description={skill.description}
-                scrollValues={skill.scrollValues}
-              />
+              <SkillCard {...skill} />
             </Styles.SkillContent>
           ))}
         </>

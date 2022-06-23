@@ -4,6 +4,7 @@ import { useState } from 'react';
 import theme from '@theme/theme';
 import ParallaxHoverCard from '@components/Cards/ParallaxHoverCard';
 import ParallaxCard from '@components/Cards/ParallaxCard';
+import Typography from '@components/Typography';
 
 export interface ProjectsProps {
   index: number;
@@ -18,8 +19,10 @@ const Projects: React.FC<ProjectsProps> = ({
   const { darkMode } = useDarkMode();
   const [show, setShow] = useState(false);
 
+  const reverse = index % 2 === 0;
+
   return (
-    <Styles.Project reverse={index % 2 === 0}>
+    <Styles.Project reverse={reverse}>
       <ParallaxCard
         extendedStyle={{ width: '70%' }}
         setShowContent={(progress) =>
@@ -31,14 +34,20 @@ const Projects: React.FC<ProjectsProps> = ({
         </Styles.ContentContainer>
       </ParallaxCard>
 
-      <Styles.InfoContaier>
-        <Styles.DecriptionLine
+      {/* <Styles.InfoContainer>
+        <Styles.DescriptionLine
           show={show}
+          reverse={reverse}
           style={{
             background: darkMode ? theme.colors.grey3 : theme.colors.grey9,
           }}
         />
-      </Styles.InfoContaier>
+        <Styles.TopDescriptionContainer show={show} reverse={reverse}>
+          <Styles.TopDescriptionText style={{ marginTop: show ? 0 : 20 }}>
+            <Typography>Shouter</Typography>
+          </Styles.TopDescriptionText>
+        </Styles.TopDescriptionContainer>
+      </Styles.InfoContainer> */}
 
       <ParallaxHoverCard
         hover

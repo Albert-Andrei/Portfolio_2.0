@@ -6,7 +6,6 @@ export const SkillsContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin-bottom: 800px;
 `;
 
 export const MainContainer = styled.div`

@@ -2,7 +2,7 @@ export interface IconProps {
   color?: string | null;
 }
 
-export const CircleChros: React.FC<IconProps> = ({ color }: IconProps) => {
+export const CircleCross: React.FC<IconProps> = ({ color }: IconProps) => {
   return (
     <g fill="none">
       <circle

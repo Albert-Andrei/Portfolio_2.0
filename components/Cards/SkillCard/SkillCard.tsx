@@ -1,19 +1,27 @@
 import React from 'react';
+import theme from '@theme/theme';
 import { useState } from 'react';
-
 import { useParallax } from 'react-scroll-parallax';
-
+import Typography from '@components/Typography';
 import * as Styles from './SkillCard.styles';
 
 interface SkillCardProps {
   title: string;
   description: string;
+  subTitle?: string;
+  tools?: string;
+  devTitle?: string;
+  devTools?: string;
   scrollValues: { start: number; end: number };
 }
 
 const SkillCard: React.FC<SkillCardProps> = ({
   title,
   description,
+  subTitle,
+  tools,
+  devTitle,
+  devTools,
   scrollValues,
 }) => {
   // State
@@ -27,7 +35,7 @@ const SkillCard: React.FC<SkillCardProps> = ({
 
   const rightS = useParallax<HTMLDivElement>({
     easing: 'easeOutQuad',
-    translateX: [150, 0],
+    // translateX: [100, 0], (show content from side)
     startScroll: scrollValues.start,
     endScroll: scrollValues.end,
     opacity: [0, 1, 'easeInOut'],
@@ -35,27 +43,63 @@ const SkillCard: React.FC<SkillCardProps> = ({
 
   const rightM = useParallax<HTMLDivElement>({
     easing: 'easeOutQuad',
-    translateX: [70, 0],
-    startScroll: scrollValues.start,
-    endScroll: scrollValues.end,
+    startScroll: scrollValues.start + 20,
+    endScroll: scrollValues.end + 20,
     opacity: [0, 1, 'easeInOut'],
   });
 
-  React.useEffect(() => {
-    console.log(title, ' progress: ', contentProgress, contentProgress < 0.5);
-  }, [contentProgress]);
+  const rightL = useParallax<HTMLDivElement>({
+    easing: 'easeOutQuad',
+    startScroll: scrollValues.start + 50,
+    endScroll: scrollValues.end + 50,
+    opacity: [0, 1, 'easeInOut'],
+  });
 
   return (
-    <Styles.SkillCard
-      ref={main.ref}
-      style={{ opacity: contentProgress < 0.5 ? 1 : 0 }}
-    >
-      <div ref={rightS.ref} style={{ marginTop: 100 }}>
-        <h1>{title}</h1>
-      </div>
-      <div ref={rightM.ref}>
-        <p>{description}</p>
-      </div>
+    <Styles.SkillCard ref={main.ref}>
+      <Styles.Content
+        style={{
+          opacity:
+            contentProgress < 0.7
+              ? 1
+              : title.toLocaleLowerCase() === 'tools'
+              ? 1
+              : 0,
+        }}
+      >
+        <Styles.ContentTitle ref={rightS.ref}>
+          <Typography font="bold" size={theme.fontSizes.display}>
+            {title}
+          </Typography>
+        </Styles.ContentTitle>
+        <div ref={rightM.ref}>
+          <Typography spacingBefore={theme.spacings.medium} align="left">
+            {description}
+          </Typography>
+        </div>
+        <Styles.SubContent ref={rightL.ref}>
+          <Typography
+            spacingBefore={theme.spacings.xlarge}
+            align="left"
+            color={theme.colors.select}
+          >
+            {subTitle}
+          </Typography>
+          <Typography spacingBefore={theme.spacings.small / 2}>
+            {tools}
+          </Typography>
+          <Typography
+            spacingBefore={theme.spacings.xlarge}
+            align="left"
+            color={theme.colors.select}
+          >
+            {devTitle}
+          </Typography>
+          <Typography spacingBefore={theme.spacings.small / 2}>
+            {devTools}
+          </Typography>
+        </Styles.SubContent>
+      </Styles.Content>
     </Styles.SkillCard>
   );
 };

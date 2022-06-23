@@ -1,11 +1,15 @@
 import Typography from '@components/Typography';
 import { useDarkMode } from '@lib/dark-mode';
 import theme from '@theme/theme';
-import { useState } from 'react';
+import { RefObject, useState } from 'react';
 import * as Style from './Hero.styles';
 import { Scene } from './Scene';
 
-const Hero: React.FC = () => {
+interface HeroProps {
+  onClick: () => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ onClick }) => {
   // Hooks
   const { darkMode } = useDarkMode();
 
@@ -38,7 +42,7 @@ const Hero: React.FC = () => {
             projects
             hovered={hovered}
             darkMode={darkMode}
-            onClick={() => {}}
+            onClick={onClick}
           >
             <Typography
               font="normal"

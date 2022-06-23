@@ -2,7 +2,7 @@
   {
     "icon": "react",
     "offsetLeft": 15,
-    "offsetBottom": 22,
+    "offsetBottom": 32,
     "overview": {
       "title": "React.js",
       "description":
@@ -13,7 +13,7 @@
     "icon": "node",
     "iconSize": 140,
     "offsetLeft": 5,
-    "offsetBottom": 10,
+    "offsetBottom": 20,
     "delay": 1,
     "zIndex": 5,
     "overview": {
@@ -24,7 +24,7 @@
     "icon": "mongodb",
     "iconSize": 100,
     "offsetLeft": 30,
-    "offsetBottom": 2,
+    "offsetBottom": 12,
     "zIndex": 5,
     "overview": {
       "title": "MongoDB",
@@ -34,7 +34,7 @@
     "icon": "next",
     "iconSize": 165,
     "offsetLeft": 50,
-    "offsetBottom": 12,
+    "offsetBottom": 22,
     "delay": 0.7,
     "overview": {
       "title": "Next.js",
@@ -46,7 +46,7 @@
     "icon": "aws",
     "iconSize": 115,
     "offsetLeft": 67,
-    "offsetBottom": 5,
+    "offsetBottom": 15,
     "delay": 0.4,
     "overview": {
       "title": "Amazon Web Services",
@@ -56,7 +56,7 @@
     "icon": "firebase",
     "iconSize": 90,
     "offsetLeft": 75,
-    "offsetBottom": 32,
+    "offsetBottom": 42,
     "delay": 1.2,
     "overview": {
       "title": "Firebase",
