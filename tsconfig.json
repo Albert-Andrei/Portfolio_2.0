@@ -39,7 +39,7 @@
     "**/*.ts",
     "**/*.tsx",
     "packages/components/Navigation/NavBar/sidebar/MenuItem.tsx"
-  ],
+, "components/Forms/ContactMe/ContactMe/.styles.ts"  ],
   "exclude": [
     "node_modules"
   ]

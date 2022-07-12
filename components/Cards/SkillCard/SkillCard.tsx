@@ -73,7 +73,7 @@ const SkillCard: React.FC<SkillCardProps> = ({
           </Typography>
         </Styles.ContentTitle>
         <div ref={rightM.ref}>
-          <Typography spacingBefore={theme.spacings.medium} align="left">
+          <Typography spacingBefore={theme.spacings.medium}>
             {description}
           </Typography>
         </div>

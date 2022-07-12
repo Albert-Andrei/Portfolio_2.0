@@ -1,10 +1,10 @@
 import { DefaultTheme } from 'styled-components';
 
 interface MediaQueries {
-  desktop?: any;
-  tabletwide?: any;
-  tablet?: any;
-  phone?: any;
+  maxSm?: any;
+  minSm?: any;
+  maxMd?: any;
+  minMd?: any;
 }
 
 export interface ITheme {
@@ -16,6 +16,7 @@ export interface ITheme {
     white: string;
     black: string;
     dark: string;
+    blue: string;
     action: string;
     actionLight: string;
     brand: string;
@@ -57,8 +58,10 @@ export interface ITheme {
     xlarge: number;
     xxlarge: number;
   };
-  screenSizes: MediaQueries;
+  breakpoints: MediaQueries;
 }
+
+const breakpoints = ['40em', '64em'];
 
 const theme: DefaultTheme = {
   default: {
@@ -69,6 +72,7 @@ const theme: DefaultTheme = {
     white: '#FFFFFF',
     black: '#000000',
     dark: '#171717',
+    blue: '#26c2ff',
     action: '#2670EC',
     actionLight: '#679BF1',
     brand: '#15339E',
@@ -110,11 +114,11 @@ const theme: DefaultTheme = {
     xlarge: 30,
     xxlarge: 40,
   },
-  screenSizes: {
-    desktop: 1000,
-    tabletwide: 1100,
-    tablet: 790,
-    phone: 415,
+  breakpoints: {
+    maxSm: `@media screen and (max-width: ${breakpoints[0]})`,
+    minSm: `@media screen and (min-width: ${breakpoints[0]})`,
+    maxMd: `@media screen and (max-width: ${breakpoints[1]})`,
+    minMd: `@media screen and (min-width: ${breakpoints[1]})`,
   },
 };
 

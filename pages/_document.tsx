@@ -41,24 +41,15 @@ class MyDocument extends Document {
           <meta charSet="UTF-8" />
           <meta name="keywords" content="HTML, CSS, JavaScript" />
           <meta name="author" content="Albert-Andrei Moldovanu" />
-
           <meta name="format-detection" content="telephone=no" />
-
           <meta name="author" content="AAMoldovanu®" />
           <meta name="copyright" content="© 2021 Albert-Anderi Moldovanu" />
-
+          <meta name="title" content="Albert-Andrei Moldovanu" />
           <meta
             name="description"
-            content="Albert-Andrei Moldovanu | Software Developer 
-              This website is my portfolio, here I share my projects, skills, contact information and a lot of usefull stuff. Feel free to take a look :D"
+            content="This website is my portfolio, here I share my projects, skills, contact information and a lot of usefull stuff. Feel free to take a look :D"
           />
-
-          <meta
-            property="og:title"
-            content="Albert-Andrei Moldovanu | Software Developer this its my portfolio website :D"
-          />
-          <meta property="og:type" content="website" />
-          <meta property="og:site_name" content="AAMoldovanu®" />
+          <meta name="image" content="https://aamoldovanu.com/preview.jpg" />
 
           {/* <!-- Facebook Meta Tags --> */}
           <meta property="og:url" content="https://aamoldovanu.com/" />
@@ -66,8 +57,7 @@ class MyDocument extends Document {
           <meta property="og:title" content="Albert-Andrei Moldovanu" />
           <meta
             property="og:description"
-            content="Albert-Andrei Moldovanu | Software Developer 
-              This website is my portfolio, here I share my projects, skills, contact information and a lot of usefull stuff. Feel free to take a look :D"
+            content="This website is my portfolio, here I share my projects, skills, contact information and a lot of usefull stuff. Feel free to take a look :D"
           />
           <meta
             property="og:image"
@@ -81,12 +71,12 @@ class MyDocument extends Document {
           <meta name="twitter:title" content="Albert-Andrei Moldovanu" />
           <meta
             name="twitter:description"
-            content="Albert-Andrei Moldovanu | Software Developer 
-              This website is my portfolio, here I share my projects, skills, contact information and a lot of usefull stuff. Feel free to take a look :D"
+            content="This website is my portfolio, here I share my projects, skills, contact information and a lot of usefull stuff. Feel free to take a look :D"
           />
           <meta
             name="twitter:image"
             content="https://aamoldovanu.com/preview.jpg"
+            // content="http://localhost:3000/preview.jpg"
           />
 
           {styles}

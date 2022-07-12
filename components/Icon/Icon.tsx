@@ -1,8 +1,13 @@
 import styled from 'styled-components';
 import { ArrowRight } from './icons/ArrowRight';
 import { CircleCross } from './icons/CircleCross';
+import { Mail } from './icons/common/Mail';
+import { Phone } from './icons/common/Phone';
+import { Cross } from './icons/Cross';
+import { Line } from './icons/Line';
 import { Logo } from './icons/Logo';
 import { Moon } from './icons/Moon';
+import { SideArrows } from './icons/SideArrows';
 import { AWS } from './icons/skills/aws/AWS';
 import { AWSLight } from './icons/skills/aws/AWSLight';
 import { Firebase } from './icons/skills/firebase/Firebase';
@@ -20,6 +25,7 @@ import { GitHub } from './icons/social/GitHub';
 import { Instagram } from './icons/social/Instagram';
 import { LinkedIn } from './icons/social/LinkedIn';
 import { Sun } from './icons/Sun';
+import { Location } from './icons/common/Location';
 
 interface IconProps {
   id: string;
@@ -139,6 +145,36 @@ const Icon: React.FC<IconProps> = ({
       content: <AWSLight />,
       width: 216,
       height: 216,
+    },
+    cross: {
+      content: <Cross color={color} />,
+      width: 9,
+      height: 9,
+    },
+    line: {
+      content: <Line color={color} />,
+      width: 9,
+      height: 2,
+    },
+    sideArrows: {
+      content: <SideArrows color={color} />,
+      width: 12,
+      height: 12,
+    },
+    mail: {
+      content: <Mail color={color} />,
+      width: 18,
+      height: 17,
+    },
+    phone: {
+      content: <Phone color={color} />,
+      width: 17,
+      height: 17,
+    },
+    location: {
+      content: <Location color={color} />,
+      width: 10,
+      height: 14,
     },
   };
 

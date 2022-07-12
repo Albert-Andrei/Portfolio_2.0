@@ -17,12 +17,12 @@ const SidebarData = [
     icon: '',
     cName: 'nav-text',
   },
-  {
-    title: 'Chess',
-    path: '/chess',
-    icon: '',
-    cName: 'nav-text',
-  },
+  // {
+  //   title: 'Chess',
+  //   path: '/chess',
+  //   icon: '',
+  //   cName: 'nav-text',
+  // },
 ];
 
 export default SidebarData;

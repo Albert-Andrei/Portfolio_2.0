@@ -1,25 +1,12 @@
-import Icon from '@components/Icon';
-import Link from 'next/dist/client/link';
-import { useState } from 'react';
-import SocialMediaData from '../../../data/SocialMediaData';
 import theme from '../../../theme';
 import Typography from '../../Typography';
 import * as Styles from './Footer.styles';
+import SocialMediaLinks from '@components/SocialMediaLinks';
 
 const Footer: React.FC = () => {
   return (
-    <Styles.FooterContaier>
-      <Styles.SocialMediaLinks>
-        {SocialMediaData.map((value, index) => (
-          <Link href={value.link} key={index}>
-            <a target="_blank" rel="noreferrer">
-              <Styles.SocialItem>
-                <Icon id={value.title} width={27} height={27} />
-              </Styles.SocialItem>
-            </a>
-          </Link>
-        ))}
-      </Styles.SocialMediaLinks>
+    <Styles.FooterContainer>
+      <SocialMediaLinks />
       <Styles.MadeWithLove>
         <Typography align="center" size={10} color={theme.colors.grey4}>
           {'Made with ❤️ by me :D'}
@@ -35,7 +22,7 @@ const Footer: React.FC = () => {
           </Typography>
         </a>
       </Styles.Address>
-    </Styles.FooterContaier>
+    </Styles.FooterContainer>
   );
 };
 
