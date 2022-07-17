@@ -1,28 +1,21 @@
 const SidebarData = [
   {
-    title: 'Home',
-    path: '/',
-    icon: '',
-    cName: 'nav-text',
-  },
-  {
-    title: 'About Me',
+    title: 'About',
     path: '/about',
     icon: '',
     cName: 'nav-text',
   },
   {
-    title: 'Contact Info',
+    title: 'Contact',
     path: '/contacts',
     icon: '',
     cName: 'nav-text',
   },
   {
-    title: 'Chess',
-    path: '/chess',
+    title: 'CV',
+    path: '/cv',
     icon: '',
-    cName: 'nav-text',
-  },
+  }
 ];
 
 export default SidebarData;

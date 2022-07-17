@@ -1,6 +1,9 @@
 import * as React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { useDarkMode } from '@lib/dark-mode';
+import Typography from '@components/Typography';
+import theme from '@theme/index';
 
 export interface MenuProps {
   value: any;
@@ -28,6 +31,8 @@ const variants = {
 };
 
 export const MenuItem: React.FC<MenuProps> = ({ value }: MenuProps) => {
+  const { darkMode } = useDarkMode();
+
   return (
     <motion.li
       variants={variants}
@@ -36,15 +41,20 @@ export const MenuItem: React.FC<MenuProps> = ({ value }: MenuProps) => {
       //@ts-ignore
       href={value.path}
     >
-      <div className="icon-placeholder" style={{ border: `2px solid white` }}>
-        {/* {value.icon} */}
+      <div className="icon-placeholder" style={{ border: `2px solid ${darkMode ? 'white' : 'black'}` }}>
+        {value.icon}
       </div>
       <Link href={value.path} passHref>
-        <div>
-          <a className="nav-title" style={{ color: 'white' }}>
+        <a>
+          <Typography
+            color={darkMode ? theme.colors.white : theme.colors.black}
+            align="left"
+            font="bold"
+            size={theme.fontSizes.display}
+          >
             {value.title}
-          </a>
-        </div>
+          </Typography>
+        </a>
       </Link>
     </motion.li>
   );

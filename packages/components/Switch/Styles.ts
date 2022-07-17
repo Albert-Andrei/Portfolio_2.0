@@ -2,10 +2,7 @@ import styled from 'styled-components';
 import * as SwitchPrimitive from '@radix-ui/react-switch';
 
 export const SwitchContaier = styled(SwitchPrimitive.Root)`
-all: unset;
-position: fixed;
-bottom: 20px;
-right: 30px;
+position: relative !important;
 box-sizing: border-box;
 width: 50px;
 height: 28px;

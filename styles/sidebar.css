@@ -19,16 +19,6 @@ nav {
   height: 100%;
 }
 
-.background {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 320px;
-  /* background: #000; */
-  background: linear-gradient(45deg, rgba(0, 0, 0, 1) 0%, rgb(29, 29, 29) 100%);
-}
-
 .nav-button {
   outline: none;
   border: none;
@@ -48,6 +38,7 @@ nav {
     right: 0px;
     top: 0px;
   }
+
   100% {
     right: 20px;
     width: 50px;
@@ -116,10 +107,6 @@ li {
 }
 
 @media only screen and (max-width: 400px) {
-  nav {
-    width: 100%;
-  }
-
   .background {
     width: 100%;
   }

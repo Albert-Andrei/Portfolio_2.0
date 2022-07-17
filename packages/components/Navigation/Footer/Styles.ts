@@ -33,8 +33,8 @@ align-items: flex-start;
 `;
 
 export const SocialItem = styled.div<{
-hoverColor?: string;
-isSpotify?: boolean;
+  hoverColor?: string;
+  isSpotify?: boolean;
 }>`
 margin: 0 10px;
 display: flex;

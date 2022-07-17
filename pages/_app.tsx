@@ -22,6 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   // Consts
   const theme = darkMode ? darkTheme : lightTheme;
+  const themeSwtich = <Switch checked={darkMode} onChange={setDarkMode} />
 
   useEffect(() => {
     const handleRouteChange = (url: any) => {
@@ -71,9 +72,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           </Head>
 
           <NavBar />
+
           <Component {...pageProps} />
 
-          <Switch checked={darkMode} onChange={setDarkMode} />
         </ThemeProvider>
       </DarkMode.Provider>
     </>
