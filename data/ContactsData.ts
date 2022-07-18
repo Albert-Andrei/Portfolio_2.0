@@ -14,7 +14,7 @@ const ContactsData = [
   {
     title: 'Phone number',
     label: '+45 71526218',
-    path: '/contacts',
+    path: '/contact',
     icon: 'phone',
   },
 ];

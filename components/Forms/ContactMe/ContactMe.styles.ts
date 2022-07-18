@@ -24,6 +24,16 @@ export const Form = styled.form<{ darkMode?: boolean }>`
     border-color: ${({ theme, darkMode }) =>
       darkMode ? '#4D4D4D' : theme.colors.white};
   }
+
+  ${({ theme }) => theme.breakpoints.maxMd} {
+    height: 80%;
+    width: 70vw;
+  }
+
+  ${({ theme }) => theme.breakpoints.maxSm} {
+    width: 100%;
+    height: 90%;
+  }
 `;
 
 export const ButtonsContainer = styled.div`
@@ -66,8 +76,15 @@ export const ContentContainer = styled.div`
 
 export const TopFields = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-gap: 40px;
+  grid-gap: ${({ theme }) => theme.spacings.xxlarge}px;
+
+  ${({ theme }) => theme.breakpoints.minSm} {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  ${({ theme }) => theme.breakpoints.maxSm} {
+    grid-gap: ${({ theme }) => theme.spacings.xlarge}px;
+  }
 `;
 
 export const TextArea = styled.textarea<{
@@ -99,10 +116,14 @@ export const InputButton = styled.input`
   border-radius: ${({ theme }) => theme.spacings.small}px;
   color: ${({ theme }) => theme.colors.white};
   border: 0px;
-  height: 40px;
+  height: ${({ theme }) => theme.spacings.xxlarge}px;
   width: 140px;
   background-color: #2e7fcb;
   cursor: pointer;
+
+  ${({ theme }) => theme.breakpoints.maxMd} {
+    margin-bottom: ${({ theme }) => theme.spacings.large}px;
+  }
 `;
 
 export const GratingTextContainer = styled.div`

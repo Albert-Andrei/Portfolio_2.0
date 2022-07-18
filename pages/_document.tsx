@@ -76,7 +76,6 @@ class MyDocument extends Document {
           <meta
             name="twitter:image"
             content="https://aamoldovanu.com/preview.jpg"
-            // content="http://localhost:3000/preview.jpg"
           />
 
           {styles}

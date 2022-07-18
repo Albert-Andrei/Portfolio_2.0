@@ -8,8 +8,32 @@ export const Project = styled.div<{ reverse?: boolean }>`
   flex-direction: ${({ reverse }) => (reverse ? 'row' : 'row-reverse')};
   justify-content: flex-start;
   align-items: center;
-
   margin-bottom: 110px;
+
+  ${({ theme }) => theme.breakpoints.maxMd} {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  ${({ theme }) => theme.breakpoints.maxSm} {
+    flex-direction: column;
+    justify-content: space-between;
+    height: 40vh;
+    margin-bottom: 50px;
+  }
+`;
+
+export const TitleContainer = styled.div`
+  margin-top: 50px;
+  width: 100%;
+
+  ${({ theme }) => theme.breakpoints.minMd} {
+    display: none;
+  }
+
+  ${({ theme }) => theme.breakpoints.maxSm} {
+    margin-top: 30px;
+  }
 `;
 
 export const ContentContainer = styled.div`
@@ -21,6 +45,7 @@ export const ContentContainer = styled.div`
     border-radius: 10px;
   }
 `;
+
 export const InfoContainer = styled.div`
   width: 30%;
   height: 100%;

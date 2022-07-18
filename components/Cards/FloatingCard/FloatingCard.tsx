@@ -28,7 +28,12 @@ const FloatingCard: React.FC<FloatingCardProps> = ({
   const { darkMode } = useDarkMode();
 
   return (
-    <Styles.MainContainer left={left} bottom={bottom} zIndex={zIndex}>
+    <Styles.MainContainer
+      left={left}
+      bottom={bottom}
+      zIndex={zIndex}
+      icon={icon}
+    >
       <Styles.FloatingContainer delay={delay}>
         <HoverCard.Root>
           <HoverCard.Trigger>

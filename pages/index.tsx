@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import styled from 'styled-components';
 import { useDarkMode } from '@lib/dark-mode';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Hero from '@components/Hero';
 import Skills from '@components/Forms/Skills';
 import WorkTogether from '@components/Forms/WorkTogether/WorkTogether';
@@ -14,6 +14,14 @@ const Landing: NextPage = () => {
   // Hooks
   const { darkMode } = useDarkMode();
   const project = useRef<HTMLDivElement>(null);
+
+  // States
+  const [isMaxSm, setMaxSm] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 40em)');
+    setMaxSm(mq.matches);
+  }, []);
 
   const scrollToProject = () => {
     if (project.current) {
@@ -31,7 +39,7 @@ const Landing: NextPage = () => {
 
       <ProjectsTitle ref={project} className="fade-in">
         <Typography
-          spacingBefore={150}
+          spacingBefore={isMaxSm ? 0 : 150}
           size={theme.fontSizes.header}
           color={darkMode ? theme.colors.grey1 : theme.colors.grey9}
         >
@@ -39,8 +47,10 @@ const Landing: NextPage = () => {
         </Typography>
 
         <Typography
-          size={theme.fontSizes.header * 2}
-          spacingBefore={theme.spacings.xlarge}
+          size={
+            isMaxSm ? theme.fontSizes.subHeader : theme.fontSizes.header * 2
+          }
+          spacingBefore={isMaxSm ? 0 : theme.spacings.xlarge}
           color={darkMode ? theme.colors.grey1 : theme.colors.grey9}
           font="bold"
         >
@@ -68,6 +78,14 @@ const Main = styled.div`
   background-color: ${({ theme }) => theme.default.background};
   color: ${({ theme }) => theme.default.fontColor};
   padding: 0 100px;
+
+  ${({ theme }) => theme.breakpoints.maxMd} {
+    padding: 0 50px;
+  }
+
+  ${({ theme }) => theme.breakpoints.maxSm} {
+    padding: 0 20px;
+  }
 `;
 
 const ProjectsTitle = styled.div`
@@ -76,6 +94,11 @@ const ProjectsTitle = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
+
+  ${({ theme }) => theme.breakpoints.maxSm} {
+    height: 100%;
+    margin-bottom: 20px;
+  }
 `;
 
 const ProjectsContainer = styled.div`
@@ -84,4 +107,8 @@ const ProjectsContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  ${({ theme }) => theme.breakpoints.maxMd} {
+    width: 100%;
+  }
 `;

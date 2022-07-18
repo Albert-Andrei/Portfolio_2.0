@@ -22,6 +22,7 @@ const Hero: React.FC<HeroProps> = ({ onClick }) => {
         <Typography
           color={darkMode ? theme.colors.grey1 : theme.colors.grey9}
           size={theme.fontSizes.subHeader}
+          align="left"
         >
           Albert-Andrei Moldovanu | Software Developer
         </Typography>

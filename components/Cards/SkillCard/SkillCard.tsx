@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import theme from '@theme/theme';
 import { useState } from 'react';
 import { useParallax } from 'react-scroll-parallax';
 import Typography from '@components/Typography';
 import * as Styles from './SkillCard.styles';
+import Icon from '@components/Icon';
+import { useDarkMode } from '@lib/dark-mode';
 
 interface SkillCardProps {
   title: string;
@@ -24,8 +26,17 @@ const SkillCard: React.FC<SkillCardProps> = ({
   devTools,
   scrollValues,
 }) => {
+  // Hooks
+  const { darkMode } = useDarkMode();
+
   // State
   const [contentProgress, setContentProgress] = useState(0);
+  const [isMaxSm, setMaxSm] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 40em)');
+    setMaxSm(mq.matches);
+  }, []);
 
   const main = useParallax<HTMLDivElement>({
     onProgressChange: (progress) => {
@@ -38,42 +49,50 @@ const SkillCard: React.FC<SkillCardProps> = ({
     // translateX: [100, 0], (show content from side)
     startScroll: scrollValues.start,
     endScroll: scrollValues.end,
-    opacity: [0, 1, 'easeInOut'],
+    opacity: [isMaxSm ? 1 : 0, 1, 'easeInOut'],
   });
 
   const rightM = useParallax<HTMLDivElement>({
     easing: 'easeOutQuad',
     startScroll: scrollValues.start + 20,
     endScroll: scrollValues.end + 20,
-    opacity: [0, 1, 'easeInOut'],
+    opacity: [isMaxSm ? 1 : 0, 1, 'easeInOut'],
   });
 
   const rightL = useParallax<HTMLDivElement>({
     easing: 'easeOutQuad',
     startScroll: scrollValues.start + 50,
     endScroll: scrollValues.end + 50,
-    opacity: [0, 1, 'easeInOut'],
+    opacity: [isMaxSm ? 1 : 0, 1, 'easeInOut'],
   });
 
   return (
     <Styles.SkillCard ref={main.ref}>
       <Styles.Content
         style={{
-          opacity:
-            contentProgress < 0.7
-              ? 1
-              : title.toLocaleLowerCase() === 'tools'
-              ? 1
-              : 0,
+          opacity: isMaxSm
+            ? 1
+            : contentProgress < 0.7
+            ? 1
+            : title.toLocaleLowerCase() === 'tools'
+            ? 1
+            : 0,
         }}
       >
+        <Styles.IconContainer>
+          <Icon
+            id={title.toLocaleLowerCase()}
+            color={darkMode ? theme.colors.white : theme.colors.black}
+          />
+        </Styles.IconContainer>
         <Styles.ContentTitle ref={rightS.ref}>
-          <Typography font="bold" size={theme.fontSizes.display}>
+          <Styles.VerticalSeparator />
+          <Typography font="bold" size={theme.fontSizes.display} align="left">
             {title}
           </Typography>
         </Styles.ContentTitle>
         <div ref={rightM.ref}>
-          <Typography spacingBefore={theme.spacings.medium}>
+          <Typography spacingBefore={theme.spacings.medium} align="left">
             {description}
           </Typography>
         </div>
@@ -85,7 +104,7 @@ const SkillCard: React.FC<SkillCardProps> = ({
           >
             {subTitle}
           </Typography>
-          <Typography spacingBefore={theme.spacings.small / 2}>
+          <Typography spacingBefore={theme.spacings.small / 2} align="left">
             {tools}
           </Typography>
           <Typography
@@ -95,7 +114,7 @@ const SkillCard: React.FC<SkillCardProps> = ({
           >
             {devTitle}
           </Typography>
-          <Typography spacingBefore={theme.spacings.small / 2}>
+          <Typography spacingBefore={theme.spacings.small / 2} align="left">
             {devTools}
           </Typography>
         </Styles.SubContent>

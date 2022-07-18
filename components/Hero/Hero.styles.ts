@@ -8,6 +8,7 @@ export const HeroContaier = styled.div`
   justify-content: space-between;
   align-items: center;
   background-color: ${({ theme }) => theme.default.background};
+  overflow: hidden;
 `;
 
 export const Content = styled.div`
@@ -20,6 +21,19 @@ export const Content = styled.div`
   justify-content: flex-end;
   align-items: flex-start;
   padding-bottom: ${({ theme }) => theme.spacings.large * 10}px;
+
+  ${({ theme }) => theme.breakpoints.maxSm} {
+    padding: 0px;
+    padding-bottom: ${({ theme }) => theme.spacings.large * 10}px;
+
+    p {
+      font-size: ${({ theme }) => theme.fontSizes.subHeader}px;
+    }
+
+    p + p {
+      font-size: ${({ theme }) => theme.fontSizes.header}px;
+    }
+  }
 `;
 
 export const SceneContaier = styled.div`
@@ -30,6 +44,10 @@ export const SceneContaier = styled.div`
   align-items: flex-start;
   height: 100%;
   padding-bottom: ${({ theme }) => theme.spacings.large * 2}px;
+
+  @media (max-width: 1380px) {
+    display: none;
+  }
 `;
 
 export const TsScene = styled.div`
@@ -45,6 +63,10 @@ export const Helpers = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   width: 280px;
+
+  ${({ theme }) => theme.breakpoints.maxSm} {
+    width: 220px;
+  }
 `;
 
 export const Button = styled.button<{
@@ -82,5 +104,14 @@ export const Button = styled.button<{
   &:hover {
     cursor: pointer;
     transform: scale(1.05);
+  }
+
+  ${({ theme }) => theme.breakpoints.maxSm} {
+    width: 100px;
+    height: 40px;
+
+    p {
+      font-size: ${({ theme }) => theme.fontSizes.medium}px;
+    }
   }
 `;

@@ -9,6 +9,7 @@ const floating = keyframes`
 
 export const MainContainer = styled.div<{
   left?: number;
+  icon?: string;
   bottom?: number;
   zIndex?: number;
 }>`
@@ -16,6 +17,12 @@ export const MainContainer = styled.div<{
   left: ${({ left }) => (left ? left : 10)}%;
   bottom: ${({ bottom }) => (bottom ? bottom : 10)}%;
   ${({ zIndex }) => zIndex && `z-index: ${zIndex};`}
+
+  ${({ theme }) => theme.breakpoints.maxMd} {
+    ${({ icon }) =>
+      (icon === 'next' || icon === 'aws' || icon === 'firebase') &&
+      `display: none;`}
+  }
 `;
 
 export const FloatingContainer = styled.div<{ delay?: number }>`

@@ -1,6 +1,6 @@
 import { useDarkMode } from '@lib/dark-mode';
 import * as Styles from './Project.styles';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import theme from '@theme/theme';
 import ParallaxHoverCard from '@components/Cards/ParallaxHoverCard';
 import ParallaxCard from '@components/Cards/ParallaxCard';
@@ -17,14 +17,22 @@ const Projects: React.FC<ProjectsProps> = ({
 }: ProjectsProps) => {
   // Hooks
   const { darkMode } = useDarkMode();
+
+  // States
   const [show, setShow] = useState(false);
+  const [isMaxMd, setMaxMd] = useState(false);
 
   const reverse = index % 2 === 0;
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 60em)');
+    setMaxMd(mq.matches);
+  }, []);
 
   return (
     <Styles.Project reverse={reverse}>
       <ParallaxCard
-        extendedStyle={{ width: '70%' }}
+        extendedStyle={{ width: isMaxMd ? '100%' : '70%' }}
         setShowContent={(progress) =>
           progress > 0.8 ? setShow(true) : setShow(false)
         }
@@ -65,6 +73,12 @@ const Projects: React.FC<ProjectsProps> = ({
           {project.secondaryImage}
         </Styles.ContentContainer>
       </ParallaxHoverCard>
+
+      <Styles.TitleContainer>
+        <Typography font="bold">
+          {project.title} | {project.date}
+        </Typography>
+      </Styles.TitleContainer>
     </Styles.Project>
   );
 };

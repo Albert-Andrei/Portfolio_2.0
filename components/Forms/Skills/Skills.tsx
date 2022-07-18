@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import theme from '@theme/theme';
 import { useDarkMode } from '@lib/dark-mode';
 import { useParallax } from 'react-scroll-parallax';
-import skillsData from './data/skills.json';
-import iconsData from './data/icons.json';
+import skillsData from '@data/SkillsData.json';
+import iconsData from '@data/SkillsIconsData.json';
 
 import FloatingCard from '@components/Cards/FloatingCard';
 import Typography from '@components/Typography';
@@ -15,6 +15,14 @@ import SkillCard from '@components/Cards/SkillCard';
 const Skills: React.FC = () => {
   // Hooks
   const { darkMode } = useDarkMode();
+
+  // States
+  const [isMaxSm, setMaxSm] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 40em)');
+    setMaxSm(mq.matches);
+  }, []);
 
   const icons = useParallax<HTMLDivElement>({
     easing: 'easeOutQuad',
@@ -27,7 +35,7 @@ const Skills: React.FC = () => {
   return (
     <Styles.SkillsContainer>
       <Typography
-        spacingBefore={150}
+        spacingBefore={isMaxSm ? 0 : 150}
         size={theme.fontSizes.header}
         color={darkMode ? theme.colors.grey1 : theme.colors.grey9}
       >
@@ -35,8 +43,9 @@ const Skills: React.FC = () => {
       </Typography>
 
       <Typography
-        size={theme.fontSizes.header * 2}
-        spacingBefore={theme.spacings.xlarge}
+        size={isMaxSm ? theme.fontSizes.subHeader : theme.fontSizes.header * 2}
+        spacingBefore={isMaxSm ? 0 : theme.spacings.xlarge}
+        spacingAfter={isMaxSm ? 120 : 0}
         color={darkMode ? theme.colors.grey1 : theme.colors.grey9}
         font="bold"
       >

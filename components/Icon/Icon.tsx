@@ -26,6 +26,9 @@ import { Instagram } from './icons/social/Instagram';
 import { LinkedIn } from './icons/social/LinkedIn';
 import { Sun } from './icons/Sun';
 import { Location } from './icons/common/Location';
+import { Development } from './icons/skills/Development';
+import { Design } from './icons/skills/Design';
+import { Tools } from './icons/skills/Tools';
 
 interface IconProps {
   id: string;
@@ -175,6 +178,21 @@ const Icon: React.FC<IconProps> = ({
       content: <Location color={color} />,
       width: 10,
       height: 14,
+    },
+    development: {
+      content: <Development color={color} />,
+      width: 50,
+      height: 48,
+    },
+    design: {
+      content: <Design color={color} />,
+      width: 48,
+      height: 48,
+    },
+    tools: {
+      content: <Tools color={color} />,
+      width: 40,
+      height: 48,
     },
   };
 

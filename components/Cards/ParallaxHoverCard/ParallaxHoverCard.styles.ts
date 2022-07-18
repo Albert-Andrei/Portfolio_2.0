@@ -23,4 +23,8 @@ export const ParallaxContainer = styled.div<{
       background: pink;`}
   border-radius: 10px;
   box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.15);
+
+  ${({ theme }) => theme.breakpoints.maxMd} {
+    display: none;
+  }
 `;

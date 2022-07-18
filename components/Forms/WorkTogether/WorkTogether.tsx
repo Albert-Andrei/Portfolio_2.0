@@ -13,8 +13,17 @@ const WorkTogether: React.FC = () => {
   // States
   const [show, setShow] = useState(false);
   const [offsetY, setOffsetY] = useState(0);
+  const [isMaxSm, setMaxSm] = useState(false);
+  const [isMaxMd, setMaxMd] = useState(false);
 
   const handleScroll = () => setOffsetY(window.pageYOffset - screen.height);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 40em)');
+    const mqMedium = window.matchMedia('(max-width: 60em)');
+    setMaxSm(mq.matches);
+    setMaxMd(mqMedium.matches);
+  }, []);
 
   useEffect(() => {
     const faders = document.querySelectorAll('.fade-in');
@@ -43,7 +52,7 @@ const WorkTogether: React.FC = () => {
         Need some help?
       </Typography>
 
-      <Link href="/contacts" passHref>
+      <Link href="/contact" passHref>
         <Styles.LinkContent darkMode={darkMode}>
           <Typography
             font="bold"
@@ -57,8 +66,8 @@ const WorkTogether: React.FC = () => {
             <Icon
               id="arrowRight"
               color={darkMode ? theme.colors.grey2 : theme.colors.grey9}
-              width={60}
-              height={50}
+              width={isMaxSm ? 20 : isMaxMd ? 30 : 60}
+              height={isMaxSm ? 14 : isMaxMd ? 25 : 50}
             />
           </Styles.IconWrapper>
         </Styles.LinkContent>

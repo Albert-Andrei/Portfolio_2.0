@@ -12,6 +12,7 @@ import BePreparedSmall from '../public/assets/images/BePreparedSmall.jpg';
 const ProjectsData = [
   {
     title: 'Shouter',
+    date: '2021',
     link: 'https://shouter.app',
     top: false,
     primary: false,
@@ -36,6 +37,7 @@ const ProjectsData = [
   },
   {
     title: 'Excelsis',
+    date: 'Aug 2022 - Present',
     link: 'https://www.instagram.com/m.albert_andrei/',
     top: true,
     primary: true,
@@ -61,6 +63,7 @@ const ProjectsData = [
   },
   {
     title: 'MyMovieDB',
+    date: 'March 1, 2021 - May 20, 2021',
     link: 'https://github.com/Albert-Andrei/MyAndroidApp',
     top: false,
     primary: true,
@@ -86,7 +89,8 @@ const ProjectsData = [
     ),
   },
   {
-    title: 'github',
+    title: 'BePrepared',
+    date: 'Sep 20, 2020 - Oct 25, 2020',
     link: 'https://github.com/Albert-Andrei',
     top: true,
     primary: true,

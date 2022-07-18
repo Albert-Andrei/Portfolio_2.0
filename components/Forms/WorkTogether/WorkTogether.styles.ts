@@ -11,6 +11,20 @@ export const MainContaier = styled.div`
 
   opacity: 0;
   transition: opacity 1s ease-in;
+
+  ${({ theme }) => theme.breakpoints.maxMd} {
+    p {
+      font-size: ${({ theme }) => theme.fontSizes.medium}px;
+    }
+    height: 70vh;
+  }
+
+  ${({ theme }) => theme.breakpoints.maxSm} {
+    p {
+      font-size: ${({ theme }) => theme.fontSizes.small}px;
+    }
+    height: 50vh;
+  }
 `;
 
 export const LinkContent = styled.a<{ darkMode?: boolean }>`
@@ -42,8 +56,28 @@ export const LinkContent = styled.a<{ darkMode?: boolean }>`
     transform: scaleX(1);
     transform-origin: left;
   }
+
+  ${({ theme }) => theme.breakpoints.maxMd} {
+    p {
+      font-size: ${({ theme }) => theme.fontSizes.header}px;
+    }
+  }
+
+  ${({ theme }) => theme.breakpoints.maxSm} {
+    p {
+      font-size: ${({ theme }) => theme.fontSizes.subHeader}px;
+    }
+  }
 `;
 
 export const IconWrapper = styled.div`
   margin-left: 30px;
+
+  ${({ theme }) => theme.breakpoints.maxMd} {
+    margin-left: 15px;
+  }
+
+  ${({ theme }) => theme.breakpoints.maxSm} {
+    margin-left: 10px;
+  }
 `;

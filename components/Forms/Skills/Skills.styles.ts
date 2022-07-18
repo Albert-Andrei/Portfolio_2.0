@@ -23,6 +23,12 @@ export const SkillContent = styled.div`
   align-items: flex-end;
   margin-bottom: 40px;
   overflow: hidden;
+
+  ${({ theme }) => theme.breakpoints.maxSm} {
+    height: 100%;
+    margin-bottom: ${({ theme }) => theme.spacings.xxlarge * 3}px;
+    align-items: center;
+  }
 `;
 
 export const IconsContainer = styled.div`
@@ -34,4 +40,8 @@ export const IconsContainer = styled.div`
   align-items: flex-start;
   z-index: 10;
   margin-top: -100px;
+
+  ${({ theme }) => theme.breakpoints.maxSm} {
+    display: none;
+  }
 `;

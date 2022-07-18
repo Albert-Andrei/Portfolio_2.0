@@ -12,8 +12,8 @@ const SidebarData = [
     cName: 'nav-text',
   },
   {
-    title: 'Contact Info',
-    path: '/contacts',
+    title: 'Contact',
+    path: '/contact',
     icon: '',
     cName: 'nav-text',
   },

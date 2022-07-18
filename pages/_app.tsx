@@ -73,7 +73,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
           <ParallaxProvider>
             <NavBar />
             <Component {...pageProps} />
-            {!path.includes('contacts') && <Footer />}
+            {!path.includes('contact') && <Footer />}
             <Switch checked={darkMode} onChange={setDarkMode} />
           </ParallaxProvider>
         </ThemeProvider>
